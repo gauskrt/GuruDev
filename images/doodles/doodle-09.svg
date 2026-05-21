@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 55" fill="none">
+  <!-- Concentric arcs. Colour: signal #e05a2b -->
+  <path d="M8  50 A38 38 0 0 1 82 50" stroke="#e05a2b" stroke-width="1.2"/>
+  <path d="M20 50 A26 26 0 0 1 70 50" stroke="#e05a2b" stroke-width="1.2"/>
+  <path d="M32 50 A14 14 0 0 1 58 50" stroke="#e05a2b" stroke-width="1.2"/>
+</svg>

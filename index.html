@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuruDev — Art Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Kaushan+Script&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║                  GURUDEV — EDITOR'S GUIDE                       ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  FOLDER STRUCTURE                                               ║
+  ║  ─────────────────────────────────────────────────────────────  ║
+  ║  images/                                                        ║
+  ║    doodles/                 ← background doodle SVG files       ║
+  ║    Libs/                                                        ║
+  ║      about/                 ← hero bg images + avatar photo     ║
+  ║      notable projects/      ← notable artwork images            ║
+  ║      contacts/              ← contact / footer images           ║
+  ║      projects/                                                  ║
+  ║        daily project/       ← Project 52 weekly images          ║
+  ║        scroll project/      ← the single panoramic scroll image ║
+  ║        collections/         ← year sub-folders (2023/, 2024/ …) ║
+  ║                                                                 ║
+  ║  QUICK REFERENCE                                                ║
+  ║  ─────────────────────────────────────────────────────────────  ║
+  ║  • Hero photo      → images/Libs/about/avatar.jpg               ║
+  ║  • Hero backgrounds→ images/Libs/about/bg-1.jpg … bg-3.jpg      ║
+  ║  • Notable works   → images/Libs/notable projects/work-1.jpg …  ║
+  ║  • Scroll image    → images/Libs/projects/scroll project/       ║
+  ║                       scroll.jpg                                ║
+  ║  • Project 52 wks  → images/Libs/projects/daily project/        ║
+  ║                       p52-1.jpg, p52-2.jpg …                    ║
+  ║  • Year collections→ images/Libs/projects/collections/2023/     ║
+  ║                       work-01.jpg …                             ║
+  ║                                                                 ║
+  ║  DOODLES                                                        ║
+  ║  ─────────────────────────────────────────────────────────────  ║
+  ║  • To change a shape → replace the SVG file in images/doodles/  ║
+  ║  • To move / resize / change animation → css/style.css          ║
+  ║    Look for the  ══ DOODLE CONFIG ══  section                   ║
+  ║  • To add a new doodle:                                         ║
+  ║    1. Drop a new SVG into images/doodles/doodle-23.svg          ║
+  ║    2. Add  <img class="doodle d23" src="…">  in the             ║
+  ║       BACKGROUND DOODLES section below                          ║
+  ║    3. Add a  .d23 { … }  rule in the DOODLE CONFIG CSS block    ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
+  <!-- ╔══════════════════════════════════════════╗
+       ║          BACKGROUND DOODLES             ║
+       ╠══════════════════════════════════════════╣
+       ║ To swap a shape: replace the SVG file   ║
+       ║ in images/doodles/                      ║
+       ║ Position & animation: css/style.css     ║
+       ║ ══ DOODLE CONFIG ══ section             ║
+       ╚══════════════════════════════════════════╝ -->
+  <div class="bg-canvas" aria-hidden="true">
+    <img class="doodle d1"  src="images/doodles/doodle-01.svg" alt="" /><!-- compass rose  -->
+    <img class="doodle d2"  src="images/doodles/doodle-02.svg" alt="" /><!-- cross         -->
+    <img class="doodle d3"  src="images/doodles/doodle-03.svg" alt="" /><!-- squiggle      -->
+    <img class="doodle d4"  src="images/doodles/doodle-04.svg" alt="" /><!-- three dots    -->
+    <img class="doodle d5"  src="images/doodles/doodle-05.svg" alt="" /><!-- triangle      -->
+    <img class="doodle d6"  src="images/doodles/doodle-06.svg" alt="" /><!-- wave          -->
+    <img class="doodle d7"  src="images/doodles/doodle-07.svg" alt="" /><!-- diamond       -->
+    <img class="doodle d8"  src="images/doodles/doodle-08.svg" alt="" /><!-- asterisk      -->
+    <img class="doodle d9"  src="images/doodles/doodle-09.svg" alt="" /><!-- arcs          -->
+    <img class="doodle d10" src="images/doodles/doodle-10.svg" alt="" /><!-- dot grid      -->
+    <img class="doodle d11" src="images/doodles/doodle-11.svg" alt="" /><!-- hexagon       -->
+    <img class="doodle d12" src="images/doodles/doodle-12.svg" alt="" /><!-- bracket       -->
+    <img class="doodle d13" src="images/doodles/doodle-13.svg" alt="" /><!-- infinity      -->
+    <img class="doodle d14" src="images/doodles/doodle-14.svg" alt="" /><!-- arch          -->
+    <img class="doodle d15" src="images/doodles/doodle-15.svg" alt="" /><!-- lightning     -->
+    <img class="doodle d16" src="images/doodles/doodle-16.svg" alt="" /><!-- ufo           -->
+    <img class="doodle d17" src="images/doodles/doodle-17.svg" alt="" /><!-- sunglasses    -->
+    <img class="doodle d18" src="images/doodles/doodle-18.svg" alt="" /><!-- astronaut     -->
+    <img class="doodle d19" src="images/doodles/doodle-19.svg" alt="" /><!-- fish          -->
+    <img class="doodle d20" src="images/doodles/doodle-20.svg" alt="" /><!-- monkey        -->
+    <img class="doodle d21" src="images/doodles/doodle-21.svg" alt="" /><!-- earth         -->
+    <img class="doodle d22" src="images/doodles/doodle-22.svg" alt="" /><!-- crown         -->
+  </div>
+
+  <!-- ╔══════════════════════════════════════════╗
+       ║                 NAV                     ║
+       ╚══════════════════════════════════════════╝ -->
+  <nav id="navbar">
+    <!-- EDIT: Drop your logo file into images/logo.png (png/svg/jpg all work).
+         When the file is present it shows as an image; until then a dashed placeholder is shown. -->
+    <a href="#hero" class="nav-logo" id="navLogo">
+      <img src="images/logo.png" alt="GuruDev" class="nav-logo-img"
+           onerror="this.closest('.nav-logo').classList.add('logo-fallback')" />
+      <div class="nav-logo-placeholder">logo.png</div>
+    </a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+
+      <!-- ╔══════════════════════════════════════════╗
+           ║        EXHIBITIONS DROPDOWN             ║
+           ╠══════════════════════════════════════════╣
+           ║ Add / remove .nav-dd-item entries below ║
+           ║ to match your exhibitions.              ║
+           ║ Each href links to:                     ║
+           ║   exhibitions/index.html?id=YOUR-ID     ║
+           ║ The ?id must match an entry in          ║
+           ║   exhibitions/index.html EXHIBITIONS{}  ║
+           ╚══════════════════════════════════════════╝ -->
+      <div class="nav-dropdown" id="exhibitionsDropdown">
+        <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Exhibitions <span class="dd-caret">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <!-- EDIT: Add your exhibition entries here.
+               Copy a nav-dd-item line, set href ?id= to match your exhibitions/index.html entry. -->
+          <a href="exhibitions/index.html?id=ink-space-2025" class="nav-dd-item" role="menuitem">Ink &amp; Space — 2025</a>
+          <a href="exhibitions/index.html?id=scroll-series"  class="nav-dd-item" role="menuitem">The Scroll Series</a>
+          <a href="exhibitions/index.html?id=cosmic-geometry" class="nav-dd-item" role="menuitem">Cosmic Geometry</a>
+          <!-- ADD MORE EXHIBITIONS HERE -->
+        </div>
+      </div>
+
+      <a href="#contact">Contact</a>
+      <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+    </div>
+  </nav>
+
+  <!-- ╔══════════════════════════════════════════╗
+       ║        YEAR EXHIBITIONS NAV             ║
+       ╠══════════════════════════════════════════╣
+       ║ Add / remove .yn-item rows below to     ║
+       ║ match your active years.                ║
+       ║ Each link opens collections/index.html  ║
+       ║ with that year pre-selected.            ║
+       ╚══════════════════════════════════════════╝ -->
+  <nav class="year-nav" id="yearNav" aria-label="Exhibitions by year">
+    <div class="yn-inner">
+      <span class="yn-label">Exhibitions</span>
+      <div class="yn-scroll">
+        <a href="collections/index.html?year=2020" target="_blank" class="yn-item">
+          <span class="yn-year">2020</span><span class="yn-tag">Archive</span>
+        </a>
+        <a href="collections/index.html?year=2021" target="_blank" class="yn-item">
+          <span class="yn-year">2021</span><span class="yn-tag">Archive</span>
+        </a>
+        <a href="collections/index.html?year=2022" target="_blank" class="yn-item">
+          <span class="yn-year">2022</span><span class="yn-tag">Archive</span>
+        </a>
+        <a href="collections/index.html?year=2023" target="_blank" class="yn-item">
+          <span class="yn-year">2023</span><span class="yn-tag">Collection</span>
+        </a>
+        <a href="collections/index.html?year=2024" target="_blank" class="yn-item">
+          <span class="yn-year">2024</span><span class="yn-tag">Collection</span>
+        </a>
+        <a href="collections/index.html?year=2025" target="_blank" class="yn-item">
+          <span class="yn-year">2025</span><span class="yn-tag">Latest</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ╔══════════════════════════════════════════╗
+       ║             HERO / ABOUT ME             ║
+       ╠══════════════════════════════════════════╣
+       ║ IMAGES (drop into images/Libs/about/)   ║
+       ║   bg-1.jpg, bg-2.jpg, bg-3.jpg          ║
+       ║     → background carousel slides        ║
+       ║   avatar.jpg → your portrait photo      ║
+       ║                                         ║
+       ║ TEXT EDITS (marked with EDIT below)     ║
+       ╚══════════════════════════════════════════╝ -->
+  <section id="hero">
+
+    <!-- Background carousel — 3 slides cycle every 4.5s -->
+    <div class="hero-carousel" id="heroCarousel">
+      <div class="hc-slide active" style="background-image:url('images/Libs/about/bg-1.jpg')"></div>
+      <div class="hc-slide"        style="background-image:url('images/Libs/about/bg-2.jpg')"></div>
+      <div class="hc-slide"        style="background-image:url('images/Libs/about/bg-3.jpg')"></div>
+    </div>
+
+    <div class="hero-noise"></div>
+    <span class="hero-bg-letter" aria-hidden="true">G</span><!-- EDIT: Change to your initial -->
+
+    <div class="hero-body">
+
+      <div class="hero-left" data-reveal="fade-up" data-delay="0">
+        <p class="eyebrow">Portfolio — 2025</p><!-- EDIT: Update the year -->
+        <h1 class="hero-name">Guru<br/><em>Dev</em></h1><!-- EDIT: Your name -->
+        <p class="hero-tagline">
+          <!-- EDIT: Your tagline / one-liner -->
+          Ink pressed into paper like starlight into darkness.<br/>
+          Lines that curve around unseen gravitational pulls.
+        </p>
+        <a href="#projects" class="cta-link">
+          <span>View Work</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-right">
+        <div class="portrait-wrap" data-reveal="fade-left" data-delay="200">
+          <!-- EDIT: Your portrait photo → images/Libs/about/avatar.jpg -->
+          <img src="images/Libs/about/avatar.jpg" alt="GuruDev" class="portrait-img"
+               onerror="this.style.display='none'" />
+          <div class="portrait-placeholder" aria-hidden="true">
+            <span>images/Libs/about/<br/>avatar.jpg</span>
+          </div>
+          <div class="portrait-tag">Based in India</div><!-- EDIT: Your location -->
+        </div>
+
+        <div class="about-card" data-reveal="fade-up" data-delay="350">
+          <span class="card-label">About me</span>
+          <!-- EDIT: Your bio text -->
+          <p>
+            I draw from the edges of perception — where the familiar
+            folds into the cosmic. Space, ink, and abstract geometries
+            are my language. Each piece is a different way of seeing
+            the same impossible thing.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scrolling ticker — EDIT: change the words below -->
+    <div class="hero-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Ink &amp; Space ·&nbsp;</span><span>Abstract Drawing ·&nbsp;</span>
+        <span>Weird Perspectives ·&nbsp;</span><span>GuruDev ·&nbsp;</span>
+        <span>Inking ·&nbsp;</span><span>Cosmic Geometry ·&nbsp;</span>
+        <span>Ink &amp; Space ·&nbsp;</span><span>Abstract Drawing ·&nbsp;</span>
+        <span>Weird Perspectives ·&nbsp;</span><span>GuruDev ·&nbsp;</span>
+        <span>Inking ·&nbsp;</span><span>Cosmic Geometry ·&nbsp;</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ╔══════════════════════════════════════════╗
+       ║              COUNTER STRIP              ║
+       ╠══════════════════════════════════════════╣
+       ║ The number = days since START_DATE       ║
+       ║ Change START_DATE in js/main.js          ║
+       ║ Search for:  const START_DATE =          ║
+       ╚══════════════════════════════════════════╝ -->
+  <section id="counter-section">
+
+    <div class="counter-bg-img" style="background-image:url('images/Libs/about/bg-2.jpg')"></div>
+    <div class="counter-noise"></div>
+
+    <div class="counter-body">
+      <div class="counter-text-col" data-reveal="fade-right">
+        <!-- EDIT: Your counter label text -->
+        <p class="counter-desc">
+          Every line drawn is a day lived.<br/>
+          Every mark, a moment catalogued<br/>
+          in ink — relentlessly.
+        </p>
+      </div>
+      <div class="counter-num-col" data-reveal="fade-left" data-delay="150">
+        <div class="counter-display">
+          <span class="c-number" id="dayCounter">000</span>
+          <div class="c-meta">
+            <span class="c-plus">+</span>
+            <span class="c-label">days<br/>drawing</span><!-- EDIT: Counter label -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║                   IMAGE CAROUSELS                          ║
+       ╠══════════════════════════════════════════════════════════════╣
+       ║ Two auto-scrolling strips — one right-to-left, one left-   ║
+       ║ to-right. 50 images picked randomly, no repeats.           ║
+       ║                                                             ║
+       ║ TO ADD YOUR ARTWORK IMAGES:                                 ║
+       ║  1. Drop files into  images/Libs/carousel/                  ║
+       ║  2. In js/main.js find CAROUSEL_IMAGES and replace the      ║
+       ║     array entries with your image paths.                    ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="img-carousels" aria-hidden="true">
+    <div class="ic-row ic-rtl">
+      <div class="ic-track" id="icTrack1"></div>
+    </div>
+    <div class="ic-row ic-ltr">
+      <div class="ic-track" id="icTrack2"></div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════╗
+       ║          INSPIRATION & STYLE            ║
+       ╠══════════════════════════════════════════╣
+       ║ IMAGE → images/Libs/about/bg-3.jpg      ║
+       ╚══════════════════════════════════════════╝ -->
+  <section id="inspiration">
+
+    <div class="inspire-img-wrap">
+      <!-- EDIT: Full-bleed art image. Tall / portrait works best. -->
+      <img src="images/Libs/about/bg-3.jpg" alt="" class="inspire-parallax-img" id="inspireParallax"
+           onerror="this.style.display='none'" />
+      <div class="inspire-img-placeholder">images/Libs/about/bg-3.jpg</div>
+    </div>
+
+    <div class="inspire-text-block" data-reveal="fade-up">
+      <span class="card-label">My Inspiration &amp; Style</span>
+      <!-- EDIT: Section heading + body text -->
+      <h2 class="inspire-heading">
+        Space is not<br/>empty —
+      </h2>
+      <p class="inspire-body">
+        It is full of tension, mystery, and impossible geometry.
+        My work explores that charged void: ink pressed into paper
+        like starlight pressing through dark matter. Forms that shouldn't
+        exist but insist on being drawn. Abstract not as abstraction —
+        but as a different kind of <em>seeing.</em>
+      </p>
+    </div>
+
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║                    NOTABLE WORKS                           ║
+       ╠══════════════════════════════════════════════════════════════╣
+       ║ IMAGES → images/Libs/notable projects/                     ║
+       ║   Naming: work-1.jpg, work-2.jpg … (any format works)      ║
+       ║                                                            ║
+       ║ CARD SIZES — add a class alongside "nw-card":              ║
+       ║   (none)       → square  (4 of 12 columns)                 ║
+       ║   nw-feature   → big hero card (8 cols × 2 rows)           ║
+       ║   nw-wide      → wide landscape (8 cols × 1 row)           ║
+       ║   nw-tall      → tall portrait  (4 cols × 2 rows)          ║
+       ║                                                            ║
+       ║ TO ADD A CARD — copy any block below, paste after          ║
+       ║   the last card, and update src / alt / num / title        ║
+       ║                                                            ║
+       ║ CLICK BEHAVIOUR                                            ║
+       ║   • Hover  → siblings dim                                  ║
+       ║   • 1st click → card pops forward                          ║
+       ║   • 2nd click → opens full-screen lightbox                 ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="projects">
+
+    <div class="nw-header" data-reveal="fade-up">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Notable<br/>Works</h2><!-- EDIT: Section title -->
+    </div>
+
+    <div class="nw-grid">
+
+      <!-- ── CARD 1 ── EDIT: src + alt + title -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="0">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-1.jpg" alt="Untitled I" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-1.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">01</span><span class="nw-title">Untitled I</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 2 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="50">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-2.jpg" alt="Untitled II" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-2.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">02</span><span class="nw-title">Untitled II</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 3 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="100">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-3.jpg" alt="Untitled III" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-3.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">03</span><span class="nw-title">Untitled III</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 4 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="0">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-4.jpg" alt="Untitled IV" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-4.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">04</span><span class="nw-title">Untitled IV</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 5 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="50">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-5.jpg" alt="Untitled V" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-5.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">05</span><span class="nw-title">Untitled V</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 6 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="100">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-6.jpg" alt="Untitled VI" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-6.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">06</span><span class="nw-title">Untitled VI</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 7 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="0">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-7.jpg" alt="Untitled VII" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-7.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">07</span><span class="nw-title">Untitled VII</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 8 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="50">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-8.jpg" alt="Untitled VIII" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-8.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">08</span><span class="nw-title">Untitled VIII</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 9 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="100">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-9.jpg" alt="Untitled IX" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-9.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">09</span><span class="nw-title">Untitled IX</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 10 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="0">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-10.jpg" alt="Untitled X" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-10.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">10</span><span class="nw-title">Untitled X</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 11 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="50">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-11.jpg" alt="Untitled XI" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-11.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">11</span><span class="nw-title">Untitled XI</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 12 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="100">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-12.jpg" alt="Untitled XII" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-12.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">12</span><span class="nw-title">Untitled XII</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 13 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="0">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-13.jpg" alt="Untitled XIII" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-13.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">13</span><span class="nw-title">Untitled XIII</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 14 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="50">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-14.jpg" alt="Untitled XIV" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-14.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">14</span><span class="nw-title">Untitled XIV</span></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 15 ── -->
+      <div class="nw-card" data-reveal="fade-up" data-delay="100">
+        <div class="nw-img-wrap">
+          <img src="images/Libs/notable projects/work-15.jpg" alt="Untitled XV" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable projects/work-15.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">15</span><span class="nw-title">Untitled XV</span></div>
+        </div>
+      </div>
+
+      <!--
+      ══ HOW TO ADD MORE ROWS ═══════════════════════════════════════
+         The grid is 3 columns wide. Every 3 cards = 1 new row.
+
+         To add a new row, copy these 3 blocks and paste here,
+         then update the numbers and image paths:
+
+           <div class="nw-card" data-reveal="fade-up" data-delay="0">
+             <div class="nw-img-wrap">
+               <img src="images/Libs/notable projects/work-16.jpg" alt="Title" onerror="this.parentElement.classList.add('ph')" />
+               <div class="nw-ph-label">notable projects/work-16.jpg</div>
+               <div class="nw-overlay"><span class="nw-num">16</span><span class="nw-title">Your Title</span></div>
+             </div>
+           </div>
+           (repeat with work-17 / delay 50, work-18 / delay 100)
+
+         Image files go in:  images/Libs/notable projects/
+         Naming convention:  work-16.jpg, work-17.jpg …
+      ═══════════════════════════════════════════════════════════════ -->
+
+    </div><!-- /.nw-grid -->
+
+    <!-- Lightbox — opens on second click of a card. No edits needed. -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+      <img id="lbImg" src="" alt="" />
+      <p id="lbCap"></p>
+    </div>
+
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║                  THE SCROLL PROJECT                        ║
+       ╠══════════════════════════════════════════════════════════════╣
+       ║ IMAGE → images/Libs/projects/scroll project/scroll.jpg     ║
+       ║   Use a tall or panoramic single drawing.                  ║
+       ║   The image is wider than the screen — drag to pan it.     ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="scroll-project">
+
+    <div class="sp-label-row" data-reveal="fade-right">
+      <span class="section-num">02</span>
+      <h2 class="section-title">The Scroll<br/>Project</h2><!-- EDIT: Section title -->
+    </div>
+
+    <div class="sp-cinematic" id="spCinematic">
+      <div class="sp-scroll-inner" id="spScrollInner">
+        <div class="sp-img-track" id="spTrack">
+          <!-- EDIT: Replace scroll.jpg with your panoramic artwork -->
+          <img src="images/Libs/projects/scroll project/scroll.jpg"
+               alt="The Scroll Project" id="spImg"
+               onerror="this.parentElement.classList.add('ph')" />
+          <div class="sp-ph-label">Libs/projects/scroll project/scroll.jpg</div>
+        </div>
+      </div>
+      <div class="sp-drag-hint" id="spDragHint" aria-hidden="true">
+        <span>← drag to explore →</span>
+      </div>
+      <div class="sp-text-float" data-reveal="fade-left">
+        <!-- EDIT: Description text for the scroll project -->
+        <p>
+          A single unbroken image — drawn across time, folded into one scroll.
+          Each section bleeds into the next, a fever dream rendered in ink.
+        </p>
+        <button class="ghost-btn">About the Art ↓</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║                     PROJECT 52                             ║
+       ╠══════════════════════════════════════════════════════════════╣
+       ║ IMAGES → images/Libs/projects/daily project/               ║
+       ║   Naming: p52-1.jpg, p52-2.jpg … p52-52.jpg               ║
+       ║                                                            ║
+       ║ TO ADD A WEEK — copy any .p52-item block, paste it before  ║
+       ║   the "To be continued" card, update src and Wk number.    ║
+       ║   The strip loops automatically — no JS changes needed.    ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="project-52">
+
+    <div class="p52-header">
+      <div class="p52-label-row" data-reveal="fade-right">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Project<br/>52</h2><!-- EDIT: Section title -->
+      </div>
+      <!-- EDIT: Sub-heading text -->
+      <p class="p52-subhead" data-reveal="fade-left" data-delay="150">
+        One drawing every week.<br/>Fifty-two weeks. No excuses.
+      </p>
+    </div>
+
+
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║                  FOOTER / CONTACT                          ║
+       ╠══════════════════════════════════════════════════════════════╣
+       ║ EDIT the social links and email address below              ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <footer id="contact">
+    <div class="footer-top" data-reveal="fade-up">
+      <div class="footer-logo-col">
+        <a href="#hero" class="footer-logo" id="footerLogo">
+          <img src="images/logo.png" alt="GuruDev" class="footer-logo-img"
+               onerror="this.closest('.footer-logo').classList.add('logo-fallback')" />
+          <div class="footer-logo-ph">logo.png</div>
+        </a>
+        <p class="footer-tagline">Ink, Space &amp; Strange Geometries.</p><!-- EDIT: Tagline -->
+      </div>
+      <div class="footer-social-col">
+        <a href="https://instagram.com/artbygurudev" target="_blank" rel="noopener" class="social-link">
+          <span class="social-num">①</span> @artbygurudev
+        </a>
+        <!-- Uncomment to re-add X / Twitter:
+        <a href="https://x.com/" target="_blank" rel="noopener" class="social-link">
+          <span class="social-num">②</span> X / Twitter
+        </a> -->
+        <!-- Uncomment to re-add YouTube:
+        <a href="https://youtube.com/" target="_blank" rel="noopener" class="social-link">
+          <span class="social-num">③</span> YouTube
+        </a> -->
+      </div>
+      <div class="footer-mail-col">
+        <!-- EDIT: Replace with your actual email address (both href and visible text) -->
+        <a href="mailto:hello@gurudev.art" class="footer-mail">hello@gurudev.art</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2001 GuruDev. All art rights reserved.</span><!-- EDIT: Year + name -->
+    </div>
+
+    <div class="footer-noise"></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
