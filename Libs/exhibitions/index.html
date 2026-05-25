@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Exhibition — GuruDev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Kaushan+Script&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { overflow-x: hidden; background: #f8f3ed; color: #2e2622; font-family: 'Cormorant Garamond', Georgia, serif; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+
+    :root {
+      --signal: #e05a2b;
+      --bone:   #2e2622;
+      --fog:    #796b62;
+      --ash:    #b8afa4;
+      --ink:    #d9d0c4;
+      --deep:   #ede7de;
+      --cream:  #17110d;
+      --g:      clamp(24px, 6vw, 100px);
+      --serif:  'Cormorant Garamond', Georgia, serif;
+      --sans:   'Syne', sans-serif;
+      --mono:   'DM Mono', monospace;
+      --brush:  'Kaushan Script', cursive;
+    }
+
+    /* ── NAV ── */
+    .e-nav {
+      position: sticky; top: 0;
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 var(--g);
+      background: rgba(248,243,237,0.95);
+      border-bottom: 1px solid rgba(224,90,43,0.1);
+      backdrop-filter: blur(14px);
+      z-index: 100;
+    }
+    .e-nav-logo {
+      display: flex; align-items: center;
+    }
+    .e-nav-logo-img {
+      height: 36px; width: auto; display: block;
+    }
+    .e-nav-logo-ph {
+      height: 36px; width: 100px;
+      border: 2px dashed rgba(224,90,43,0.45);
+      display: none; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 0.55rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(224,90,43,0.6);
+    }
+    .e-nav-logo.logo-fallback .e-nav-logo-img { display: none; }
+    .e-nav-logo.logo-fallback .e-nav-logo-ph  { display: flex; }
+    .e-dm-toggle {
+      background: none; border: none; cursor: pointer;
+      font-size: 1.1rem; color: var(--fog);
+      transition: color 0.2s, transform 0.35s;
+      padding: 0 0.2rem; line-height: 1;
+    }
+    .e-dm-toggle:hover { color: var(--signal); transform: rotate(180deg); }
+    .e-nav-back {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fog);
+      display: flex; align-items: center; gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .e-nav-back:hover { color: var(--signal); }
+    .e-nav-back svg { width: 14px; }
+
+    /* ── HERO ── */
+    .e-hero {
+      padding: clamp(60px,10vh,120px) var(--g) clamp(40px,6vh,80px);
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-wrap: wrap; gap: 2rem;
+      border-bottom: 1px solid rgba(224,90,43,0.1);
+    }
+    .e-hero-id {
+      font-family: var(--sans);
+      font-size: clamp(5rem, 18vw, 16rem);
+      font-weight: 800;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(224,90,43,0.3);
+      user-select: none;
+    }
+    .e-hero-meta { max-width: 420px; padding-bottom: 1rem; }
+    .e-hero-label {
+      font-family: var(--mono);
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--signal); display: block;
+      margin-bottom: 1rem; padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(224,90,43,0.2);
+    }
+    .e-hero-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 300; font-style: italic; line-height: 1.15;
+      color: var(--cream); margin-bottom: 1rem;
+    }
+    .e-hero-desc {
+      font-family: var(--serif);
+      font-size: 1rem; font-style: italic;
+      color: var(--fog); line-height: 1.9;
+    }
+    .e-hero-date {
+      font-family: var(--mono);
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ash); margin-top: 1.2rem;
+    }
+
+    /* ── ARTWORK GRID ── */
+    .e-grid-wrap { padding: clamp(40px,6vh,80px) var(--g); }
+    .e-grid-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: clamp(2rem,4vh,4rem); flex-wrap: wrap; gap: 1rem;
+    }
+    .e-grid-heading {
+      font-family: var(--sans);
+      font-size: clamp(1.6rem, 4vw, 3rem);
+      font-weight: 800; line-height: 0.92;
+      letter-spacing: -0.03em; color: var(--cream);
+    }
+    .e-count {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.2em; color: var(--fog); text-transform: uppercase;
+    }
+
+    .e-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 700px) { .e-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 440px) { .e-grid { grid-template-columns: 1fr; } }
+
+    .e-card {
+      position: relative; aspect-ratio: 1;
+      overflow: hidden; background: var(--ink);
+      cursor: pointer;
+    }
+    .e-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); display: block;
+    }
+    .e-card:hover img { transform: scale(1.06); }
+    .e-card.ph img { display: none; }
+    .e-card.ph::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(-45deg, #d9d0c4, #d9d0c4 12px, #ede7de 12px, #ede7de 24px);
+    }
+    .e-card-ph-label {
+      position: absolute; inset: 0;
+      display: none; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 0.6rem;
+      color: rgba(224,90,43,0.4); text-align: center; padding: 1rem;
+    }
+    .e-card.ph .e-card-ph-label { display: flex; }
+    .e-card-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1rem 1.2rem;
+      background: linear-gradient(transparent, rgba(20,10,5,0.78));
+      opacity: 0; transform: translateY(4px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .e-card:hover .e-card-overlay { opacity: 1; transform: none; }
+    .e-card-num  { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.15em; color: rgba(255,200,170,0.8); display: block; margin-bottom: 0.2rem; }
+    .e-card-name { font-family: var(--serif); font-size: 0.9rem; font-style: italic; color: #fff; }
+
+    /* ── FOOTER ── */
+    .e-footer {
+      border-top: 1px solid rgba(224,90,43,0.12);
+      background: var(--deep);
+      padding: 2.5rem var(--g);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .e-footer-logo { display: block; }
+    .e-footer-logo-img { height: 44px; width: auto; display: block; }
+    .e-footer-logo-ph {
+      height: 44px; width: 130px;
+      border: 2px dashed rgba(224,90,43,0.45);
+      display: none; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 0.55rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(224,90,43,0.6);
+    }
+    .e-footer-logo.logo-fallback .e-footer-logo-img { display: none; }
+    .e-footer-logo.logo-fallback .e-footer-logo-ph  { display: flex; }
+    .e-footer-copy { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; color: var(--fog); text-align: center; }
+
+    /* ── DARK MODE ── */
+    [data-theme="dark"] {
+      --void:  #0d0b09; --deep:  #161210; --ink:   #2a2520;
+      --ash:   #5a5248; --fog:   #8a7f76; --bone:  #c8bfb5;
+      --cream: #e8dfd5;
+    }
+    [data-theme="dark"] body    { background: var(--void); color: var(--bone); }
+    [data-theme="dark"] .e-nav  { background: rgba(13,11,9,0.96); border-bottom-color: rgba(224,90,43,0.15); }
+    [data-theme="dark"] .e-hero { border-bottom-color: rgba(224,90,43,0.12); }
+    [data-theme="dark"] .e-footer { background: var(--deep); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="e-nav">
+    <a href="../../index.html" class="e-nav-logo" id="eNavLogo">
+      <span style="font-family:'Kaushan Script',cursive;font-size:1.65rem;color:var(--cream);letter-spacing:0.02em;line-height:1;">GuruDev</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+      <button class="e-dm-toggle" id="eDmToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+      <a href="../../index.html" class="e-nav-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to Portfolio
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="e-hero">
+    <div class="e-hero-id" id="heroId">EX</div>
+    <div class="e-hero-meta">
+      <span class="e-hero-label" id="heroLabel">Exhibition</span>
+      <h1 class="e-hero-title" id="heroTitle">Untitled Exhibition</h1>
+      <p class="e-hero-desc" id="heroDesc">A curated selection of works.</p>
+      <p class="e-hero-date" id="heroDate"></p>
+    </div>
+  </section>
+
+  <!-- ARTWORK GRID -->
+  <section class="e-grid-wrap">
+    <div class="e-grid-header">
+      <h2 class="e-grid-heading">Works</h2>
+      <span class="e-count" id="eCount"></span>
+    </div>
+    <div class="e-grid" id="exhibitionGrid"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="e-footer">
+    <a href="../../index.html" class="e-footer-logo">
+      <span style="font-family:'Kaushan Script',cursive;font-size:2rem;color:var(--cream);letter-spacing:0.02em;line-height:1;">GuruDev</span>
+    </a>
+    <span class="e-footer-copy">© GuruDev. All art rights reserved.</span>
+  </footer>
+
+  <script>
+    /* ═══════════════════════════════════════════════════════════
+       EXHIBITIONS — configuration
+       ═══════════════════════════════════════════════════════════
+
+       HOW TO ADD A NEW EXHIBITION
+       ────────────────────────────────────────────────────────
+       1. Create a folder for your images:
+            images/Libs/exhibitions/YOUR-ID/
+
+       2. Add a new entry to EXHIBITIONS below:
+            'your-id': {
+              title:    'Exhibition Title',
+              desc:     'A short description shown in the hero.',
+              date:     '2025',          // shown as a label
+              heroId:   'EX',            // large decorative letters in hero
+              works: [
+                { src: '../images/Libs/exhibitions/your-id/work-01.jpg', title: 'Work Title' },
+                { src: '../images/Libs/exhibitions/your-id/work-02.jpg', title: 'Work Title' },
+                // ...add as many works as you like
+              ]
+            },
+
+       3. Add a matching link in index.html inside the nav dropdown:
+            <a href="exhibitions/index.html?id=your-id" class="nav-dd-item">Exhibition Name</a>
+
+       4. Link to this page from anywhere using:
+            exhibitions/index.html?id=your-id
+
+       ═══════════════════════════════════════════════════════ */
+
+    const EXHIBITIONS = {
+      'ink-space-2025': {
+        title:  'Ink &amp; Space — 2025',
+        desc:   'A series of ink drawings exploring cosmic geometry and the tension between negative and positive space.',
+        date:   '2025',
+        heroId: 'IS',
+        works: [
+          /* { src: '../images/Libs/exhibitions/ink-space-2025/work-01.jpg', title: 'Gravity I' }, */
+        ]
+      },
+      'scroll-series': {
+        title:  'The Scroll Series',
+        desc:   'One unbroken line drawn across time — folded, compressed, expanded into a single panoramic scroll.',
+        date:   '2023 – Ongoing',
+        heroId: 'SS',
+        works: [
+          /* { src: '../images/Libs/exhibitions/scroll-series/work-01.jpg', title: 'Fragment I' }, */
+        ]
+      },
+      'cosmic-geometry': {
+        title:  'Cosmic Geometry',
+        desc:   'Forms that shouldn\'t exist but insist on being drawn. Abstract as a different kind of seeing.',
+        date:   '2024',
+        heroId: 'CG',
+        works: [
+          /* { src: '../images/Libs/exhibitions/cosmic-geometry/work-01.jpg', title: 'Orbit I' }, */
+        ]
+      },
+      /* ── ADD MORE EXHIBITIONS ABOVE THIS LINE ── */
+    };
+
+    /* ── Dark mode — reads same localStorage key as main page ── */
+    const _savedTheme = localStorage.getItem('theme');
+    if (_savedTheme) document.documentElement.setAttribute('data-theme', _savedTheme);
+    document.getElementById('eDmToggle')?.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    /* ─── Runtime ──────────────────────────────────────────── */
+    const params = new URLSearchParams(window.location.search);
+    const id     = params.get('id') || Object.keys(EXHIBITIONS)[0];
+    const data   = EXHIBITIONS[id] || {};
+
+    document.getElementById('heroId').textContent    = data.heroId || id.slice(0,2).toUpperCase();
+    document.getElementById('heroLabel').textContent = 'Exhibition · ' + (data.date || '');
+    document.getElementById('heroTitle').innerHTML   = data.title  || id;
+    document.getElementById('heroDesc').textContent  = data.desc   || '';
+    document.getElementById('heroDate').textContent  = data.date   || '';
+    document.title = (data.title || id) + ' — GuruDev';
+
+    const grid  = document.getElementById('exhibitionGrid');
+    const works = data.works || [];
+
+    if (works.length === 0) {
+      for (let i = 1; i <= 9; i++) {
+        grid.appendChild(makeCard(
+          `./${id}/work-${String(i).padStart(2,'0')}.jpg`,
+          `Work ${String(i).padStart(2,'0')}`, i
+        ));
+      }
+    } else {
+      works.forEach((w, i) => grid.appendChild(makeCard(w.src, w.title, i + 1)));
+      document.getElementById('eCount').textContent = works.length + ' works';
+    }
+
+    function makeCard(src, title, num) {
+      const div = document.createElement('div');
+      div.className = 'e-card';
+      div.innerHTML = `
+        <img src="${src}" alt="${title}" onerror="this.parentElement.classList.add('ph')" />
+        <div class="e-card-ph-label">${src.split('/').pop()}</div>
+        <div class="e-card-overlay">
+          <span class="e-card-num">${String(num).padStart(2,'0')}</span>
+          <span class="e-card-name">${title}</span>
+        </div>
+      `;
+      return div;
+    }
+  </script>
+</body>
+</html>

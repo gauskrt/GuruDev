@@ -1,0 +1,8 @@
+# Python scripts
+*.py
+requirements.txt
+
+# Downloaded images cache
+downloaded_images/
+
+art.json
