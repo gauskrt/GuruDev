@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GuruDev — Art Portfolio</title>
+  <title>Art by GuruDev</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,79 +11,29 @@
 </head>
 <body>
 
-<!--
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║                  GURUDEV — EDITOR'S GUIDE                       ║
-  ╠══════════════════════════════════════════════════════════════════╣
-  ║  FOLDER STRUCTURE                                               ║
-  ║  ─────────────────────────────────────────────────────────────  ║
-  ║  images/                                                        ║
-  ║    doodles/                 ← background doodle SVG files       ║
-  ║    Libs/                                                        ║
-  ║      about/                 ← hero bg images + avatar photo     ║
-  ║      notable projects/      ← notable artwork images            ║
-  ║      contacts/              ← contact / footer images           ║
-  ║      projects/                                                  ║
-  ║        daily project/       ← Project 52 weekly images          ║
-  ║        scroll project/      ← the single panoramic scroll image ║
-  ║        collections/         ← year sub-folders (2023/, 2024/ …) ║
-  ║                                                                 ║
-  ║  QUICK REFERENCE                                                ║
-  ║  ─────────────────────────────────────────────────────────────  ║
-  ║  • Hero photo      → images/Libs/about/avatar.jpg               ║
-  ║  • Hero backgrounds→ images/Libs/about/bg-1.jpg … bg-3.jpg      ║
-  ║  • Notable works   → images/Libs/notable projects/work-1.jpg …  ║
-  ║  • Scroll image    → images/Libs/projects/scroll project/       ║
-  ║                       scroll.jpg                                ║
-  ║  • Project 52 wks  → images/Libs/projects/daily project/        ║
-  ║                       p52-1.jpg, p52-2.jpg …                    ║
-  ║  • Year collections→ images/Libs/projects/collections/2023/     ║
-  ║                       work-01.jpg …                             ║
-  ║                                                                 ║
-  ║  DOODLES                                                        ║
-  ║  ─────────────────────────────────────────────────────────────  ║
-  ║  • To change a shape → replace the SVG file in images/doodles/  ║
-  ║  • To move / resize / change animation → css/style.css          ║
-  ║    Look for the  ══ DOODLE CONFIG ══  section                   ║
-  ║  • To add a new doodle:                                         ║
-  ║    1. Drop a new SVG into images/doodles/doodle-23.svg          ║
-  ║    2. Add  <img class="doodle d23" src="…">  in the             ║
-  ║       BACKGROUND DOODLES section below                          ║
-  ║    3. Add a  .d23 { … }  rule in the DOODLE CONFIG CSS block    ║
-  ╚══════════════════════════════════════════════════════════════════╝
--->
-
-  <!-- ╔══════════════════════════════════════════╗
-       ║          BACKGROUND DOODLES             ║
-       ╠══════════════════════════════════════════╣
-       ║ To swap a shape: replace the SVG file   ║
-       ║ in images/doodles/                      ║
-       ║ Position & animation: css/style.css     ║
-       ║ ══ DOODLE CONFIG ══ section             ║
-       ╚══════════════════════════════════════════╝ -->
-  <div class="bg-canvas" aria-hidden="true">
-    <img class="doodle d1"  src="images/doodles/doodle-01.svg" alt="" /><!-- compass rose  -->
-    <img class="doodle d2"  src="images/doodles/doodle-02.svg" alt="" /><!-- cross         -->
-    <img class="doodle d3"  src="images/doodles/doodle-03.svg" alt="" /><!-- squiggle      -->
-    <img class="doodle d4"  src="images/doodles/doodle-04.svg" alt="" /><!-- three dots    -->
-    <img class="doodle d5"  src="images/doodles/doodle-05.svg" alt="" /><!-- triangle      -->
-    <img class="doodle d6"  src="images/doodles/doodle-06.svg" alt="" /><!-- wave          -->
-    <img class="doodle d7"  src="images/doodles/doodle-07.svg" alt="" /><!-- diamond       -->
-    <img class="doodle d8"  src="images/doodles/doodle-08.svg" alt="" /><!-- asterisk      -->
-    <img class="doodle d9"  src="images/doodles/doodle-09.svg" alt="" /><!-- arcs          -->
-    <img class="doodle d10" src="images/doodles/doodle-10.svg" alt="" /><!-- dot grid      -->
-    <img class="doodle d11" src="images/doodles/doodle-11.svg" alt="" /><!-- hexagon       -->
-    <img class="doodle d12" src="images/doodles/doodle-12.svg" alt="" /><!-- bracket       -->
-    <img class="doodle d13" src="images/doodles/doodle-13.svg" alt="" /><!-- infinity      -->
-    <img class="doodle d14" src="images/doodles/doodle-14.svg" alt="" /><!-- arch          -->
-    <img class="doodle d15" src="images/doodles/doodle-15.svg" alt="" /><!-- lightning     -->
-    <img class="doodle d16" src="images/doodles/doodle-16.svg" alt="" /><!-- ufo           -->
-    <img class="doodle d17" src="images/doodles/doodle-17.svg" alt="" /><!-- sunglasses    -->
-    <img class="doodle d18" src="images/doodles/doodle-18.svg" alt="" /><!-- astronaut     -->
-    <img class="doodle d19" src="images/doodles/doodle-19.svg" alt="" /><!-- fish          -->
-    <img class="doodle d20" src="images/doodles/doodle-20.svg" alt="" /><!-- monkey        -->
-    <img class="doodle d21" src="images/doodles/doodle-21.svg" alt="" /><!-- earth         -->
-    <img class="doodle d22" src="images/doodles/doodle-22.svg" alt="" /><!-- crown         -->
+ <div class="bg-canvas" aria-hidden="true">
+    <img class="doodle d1"  src="Libs/doodles/doodle-01.svg" alt="" /><!-- compass rose  -->
+    <img class="doodle d2"  src="Libs/doodles/doodle-02.svg" alt="" /><!-- cross         -->
+    <img class="doodle d3"  src="Libs/doodles/doodle-03.svg" alt="" /><!-- squiggle      -->
+    <img class="doodle d4"  src="Libs/doodles/doodle-04.svg" alt="" /><!-- three dots    -->
+    <img class="doodle d5"  src="Libs/doodles/doodle-05.svg" alt="" /><!-- triangle      -->
+    <img class="doodle d6"  src="Libs/doodles/doodle-06.svg" alt="" /><!-- wave          -->
+    <img class="doodle d7"  src="Libs/doodles/doodle-07.svg" alt="" /><!-- diamond       -->
+    <img class="doodle d8"  src="Libs/doodles/doodle-08.svg" alt="" /><!-- asterisk      -->
+    <img class="doodle d9"  src="Libs/doodles/doodle-09.svg" alt="" /><!-- arcs          -->
+    <img class="doodle d10" src="Libs/doodles/doodle-10.svg" alt="" /><!-- dot grid      -->
+    <img class="doodle d11" src="Libs/doodles/doodle-11.svg" alt="" /><!-- hexagon       -->
+    <img class="doodle d12" src="Libs/doodles/doodle-12.svg" alt="" /><!-- bracket       -->
+    <img class="doodle d13" src="Libs/doodles/doodle-13.svg" alt="" /><!-- infinity      -->
+    <img class="doodle d14" src="Libs/doodles/doodle-14.svg" alt="" /><!-- arch          -->
+    <img class="doodle d15" src="Libs/doodles/doodle-15.svg" alt="" /><!-- lightning     -->
+    <img class="doodle d16" src="Libs/doodles/doodle-16.svg" alt="" /><!-- ufo           -->
+    <img class="doodle d17" src="Libs/doodles/doodle-17.svg" alt="" /><!-- sunglasses    -->
+    <img class="doodle d18" src="Libs/doodles/doodle-18.svg" alt="" /><!-- astronaut     -->
+    <img class="doodle d19" src="Libs/doodles/doodle-19.svg" alt="" /><!-- fish          -->
+    <img class="doodle d20" src="Libs/doodles/doodle-20.svg" alt="" /><!-- monkey        -->
+    <img class="doodle d21" src="Libs/doodles/doodle-21.svg" alt="" /><!-- earth         -->
+    <img class="doodle d22" src="Libs/doodles/doodle-22.svg" alt="" /><!-- crown         -->
   </div>
 
   <!-- ╔══════════════════════════════════════════╗
@@ -93,9 +43,7 @@
     <!-- EDIT: Drop your logo file into images/logo.png (png/svg/jpg all work).
          When the file is present it shows as an image; until then a dashed placeholder is shown. -->
     <a href="#hero" class="nav-logo" id="navLogo">
-      <img src="images/logo.png" alt="GuruDev" class="nav-logo-img"
-           onerror="this.closest('.nav-logo').classList.add('logo-fallback')" />
-      <div class="nav-logo-placeholder">logo.png</div>
+      <span class="nav-logo-text">GuruDev</span>
     </a>
     <div class="nav-links">
       <a href="#projects">Projects</a>
@@ -117,9 +65,9 @@
         <div class="nav-dropdown-menu" role="menu">
           <!-- EDIT: Add your exhibition entries here.
                Copy a nav-dd-item line, set href ?id= to match your exhibitions/index.html entry. -->
-          <a href="exhibitions/index.html?id=ink-space-2025" class="nav-dd-item" role="menuitem">Ink &amp; Space — 2025</a>
-          <a href="exhibitions/index.html?id=scroll-series"  class="nav-dd-item" role="menuitem">The Scroll Series</a>
-          <a href="exhibitions/index.html?id=cosmic-geometry" class="nav-dd-item" role="menuitem">Cosmic Geometry</a>
+          <a href="Libs/exhibitions/index.html?id=ink-space-2025" class="nav-dd-item" role="menuitem">Ink &amp; Space — 2025</a>
+          <a href="Libs/exhibitions/index.html?id=scroll-series"  class="nav-dd-item" role="menuitem">The Scroll Series</a>
+          <a href="Libs/exhibitions/index.html?id=cosmic-geometry" class="nav-dd-item" role="menuitem">Cosmic Geometry</a>
           <!-- ADD MORE EXHIBITIONS HERE -->
         </div>
       </div>
@@ -141,22 +89,22 @@
     <div class="yn-inner">
       <span class="yn-label">Exhibitions</span>
       <div class="yn-scroll">
-        <a href="collections/index.html?year=2020" target="_blank" class="yn-item">
+        <a href="Libs/collections/index.html?year=2020" target="_blank" class="yn-item">
           <span class="yn-year">2020</span><span class="yn-tag">Archive</span>
         </a>
-        <a href="collections/index.html?year=2021" target="_blank" class="yn-item">
+        <a href="Libs/collections/index.html?year=2021" target="_blank" class="yn-item">
           <span class="yn-year">2021</span><span class="yn-tag">Archive</span>
         </a>
-        <a href="collections/index.html?year=2022" target="_blank" class="yn-item">
+        <a href="Libs/collections/index.html?year=2022" target="_blank" class="yn-item">
           <span class="yn-year">2022</span><span class="yn-tag">Archive</span>
         </a>
-        <a href="collections/index.html?year=2023" target="_blank" class="yn-item">
+        <a href="Libs/collections/index.html?year=2023" target="_blank" class="yn-item">
           <span class="yn-year">2023</span><span class="yn-tag">Collection</span>
         </a>
-        <a href="collections/index.html?year=2024" target="_blank" class="yn-item">
+        <a href="Libs/collections/index.html?year=2024" target="_blank" class="yn-item">
           <span class="yn-year">2024</span><span class="yn-tag">Collection</span>
         </a>
-        <a href="collections/index.html?year=2025" target="_blank" class="yn-item">
+        <a href="Libs/collections/index.html?year=2025" target="_blank" class="yn-item">
           <span class="yn-year">2025</span><span class="yn-tag">Latest</span>
         </a>
       </div>
@@ -177,9 +125,9 @@
 
     <!-- Background carousel — 3 slides cycle every 4.5s -->
     <div class="hero-carousel" id="heroCarousel">
-      <div class="hc-slide active" style="background-image:url('images/Libs/about/bg-1.jpg')"></div>
-      <div class="hc-slide"        style="background-image:url('images/Libs/about/bg-2.jpg')"></div>
-      <div class="hc-slide"        style="background-image:url('images/Libs/about/bg-3.jpg')"></div>
+      <div class="hc-slide active" style="background-image:url('Libs/projects/notable works/tiger.jpg')"></div>
+      <div class="hc-slide"        style="background-image:url('Libs/projects/notable works/monkey.jpg')"></div>
+      <div class="hc-slide"        style="background-image:url('Libs/projects/notable works/on_bench.jpg')"></div>
     </div>
 
     <div class="hero-noise"></div>
@@ -189,12 +137,7 @@
 
       <div class="hero-left" data-reveal="fade-up" data-delay="0">
         <p class="eyebrow">Portfolio — 2025</p><!-- EDIT: Update the year -->
-        <h1 class="hero-name">Guru<br/><em>Dev</em></h1><!-- EDIT: Your name -->
-        <p class="hero-tagline">
-          <!-- EDIT: Your tagline / one-liner -->
-          Ink pressed into paper like starlight into darkness.<br/>
-          Lines that curve around unseen gravitational pulls.
-        </p>
+        <h1 class="hero-name">GuruDev</h1><!-- EDIT: Your name -->
         <a href="#projects" class="cta-link">
           <span>View Work</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -204,7 +147,7 @@
       <div class="hero-right">
         <div class="portrait-wrap" data-reveal="fade-left" data-delay="200">
           <!-- EDIT: Your portrait photo → images/Libs/about/avatar.jpg -->
-          <img src="images/Libs/about/avatar.jpg" alt="GuruDev" class="portrait-img"
+          <img src="Libs/projects/about/Me.jpg" alt="GuruDev" class="portrait-img"
                onerror="this.style.display='none'" />
           <div class="portrait-placeholder" aria-hidden="true">
             <span>images/Libs/about/<br/>avatar.jpg</span>
@@ -249,16 +192,17 @@
        ╚══════════════════════════════════════════╝ -->
   <section id="counter-section">
 
-    <div class="counter-bg-img" style="background-image:url('images/Libs/about/bg-2.jpg')"></div>
     <div class="counter-noise"></div>
 
     <div class="counter-body">
       <div class="counter-text-col" data-reveal="fade-right">
         <!-- EDIT: Your counter label text -->
         <p class="counter-desc">
-          Every line drawn is a day lived.<br/>
-          Every mark, a moment catalogued<br/>
-          in ink — relentlessly.
+          Practice makes perfect!
+	  But art is not the strive for perfection, 
+	  it is journey of expression.<br/>
+          Every mark, Every colour is to express — relentlessly.
+		<br/><br/> The constant endevour to pic up a book and a pen everyday since January 2022
         </p>
       </div>
       <div class="counter-num-col" data-reveal="fade-left" data-delay="150">
@@ -303,23 +247,23 @@
 
     <div class="inspire-img-wrap">
       <!-- EDIT: Full-bleed art image. Tall / portrait works best. -->
-      <img src="images/Libs/about/bg-3.jpg" alt="" class="inspire-parallax-img" id="inspireParallax"
+      <img src="Libs/projects/notable works/chamelion.jpg" alt="" class="inspire-parallax-img" id="inspireParallax"
            onerror="this.style.display='none'" />
-      <div class="inspire-img-placeholder">images/Libs/about/bg-3.jpg</div>
+      <div class="inspire-img-placeholder">Libs/projects/notable works/chamelion.jpg</div>
     </div>
 
     <div class="inspire-text-block" data-reveal="fade-up">
-      <span class="card-label">My Inspiration &amp; Style</span>
+      <span class="card-label" style="opacity: 0.2;">My Inspiration </span>
       <!-- EDIT: Section heading + body text -->
       <h2 class="inspire-heading">
-        Space is not<br/>empty —
+        If not us <br/> - then who?
       </h2>
       <p class="inspire-body">
-        It is full of tension, mystery, and impossible geometry.
-        My work explores that charged void: ink pressed into paper
-        like starlight pressing through dark matter. Forms that shouldn't
-        exist but insist on being drawn. Abstract not as abstraction —
-        but as a different kind of <em>seeing.</em>
+        It is of my understanding that everything happens in chance.
+        We are just the universe experincing itself.
+	My work explores that charged void: ink split onto paper, colour to build contrast that only we understand.
+        Abstract not as abstraction —
+        but to establish a different kind of <em>seeing.</em>
       </p>
     </div>
 
@@ -354,138 +298,124 @@
 
     <div class="nw-grid">
 
-      <!-- ── CARD 1 ── EDIT: src + alt + title -->
       <div class="nw-card" data-reveal="fade-up" data-delay="0">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-1.jpg" alt="Untitled I" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-1.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">01</span><span class="nw-title">Untitled I</span></div>
+          <img src="Libs/projects/notable works/butterfly.jpg" alt="Butterfly" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/butterfly.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">01</span><span class="nw-title">Butterfly</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 2 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="50">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-2.jpg" alt="Untitled II" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-2.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">02</span><span class="nw-title">Untitled II</span></div>
+          <img src="Libs/projects/notable works/car.jpg" alt="Car" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/car.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">02</span><span class="nw-title">Car</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 3 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="100">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-3.jpg" alt="Untitled III" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-3.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">03</span><span class="nw-title">Untitled III</span></div>
+          <img src="Libs/projects/notable works/chamelion.jpg" alt="Chameleon" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/chamelion.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">03</span><span class="nw-title">Chameleon</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 4 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="0">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-4.jpg" alt="Untitled IV" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-4.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">04</span><span class="nw-title">Untitled IV</span></div>
+          <img src="Libs/projects/notable works/frogs.jpg" alt="Frogs" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/frogs.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">04</span><span class="nw-title">Frogs</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 5 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="50">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-5.jpg" alt="Untitled V" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-5.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">05</span><span class="nw-title">Untitled V</span></div>
+          <img src="Libs/projects/notable works/hosre.jpg" alt="Horse" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/hosre.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">05</span><span class="nw-title">Horse</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 6 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="100">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-6.jpg" alt="Untitled VI" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-6.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">06</span><span class="nw-title">Untitled VI</span></div>
+          <img src="Libs/projects/notable works/monkey.jpg" alt="Monkey" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/monkey.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">06</span><span class="nw-title">Monkey</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 7 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="0">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-7.jpg" alt="Untitled VII" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-7.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">07</span><span class="nw-title">Untitled VII</span></div>
+          <img src="Libs/projects/notable works/Mouse.jpg" alt="Mouse" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/Mouse.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">07</span><span class="nw-title">Mouse</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 8 ── -->
-      <div class="nw-card" data-reveal="fade-up" data-delay="50">
-        <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-8.jpg" alt="Untitled VIII" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-8.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">08</span><span class="nw-title">Untitled VIII</span></div>
-        </div>
-      </div>
 
-      <!-- ── CARD 9 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="100">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-9.jpg" alt="Untitled IX" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-9.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">09</span><span class="nw-title">Untitled IX</span></div>
+          <img src="Libs/projects/notable works/on_bench.jpg" alt="On the Bench" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/on_bench.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">09</span><span class="nw-title">On the Bench</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 10 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="0">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-10.jpg" alt="Untitled X" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-10.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">10</span><span class="nw-title">Untitled X</span></div>
+          <img src="Libs/projects/notable works/panda.jpg" alt="Panda" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/panda.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">10</span><span class="nw-title">Panda</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 11 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="50">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-11.jpg" alt="Untitled XI" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-11.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">11</span><span class="nw-title">Untitled XI</span></div>
+          <img src="Libs/projects/notable works/sparta.jpg" alt="Sparta" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/sparta.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">11</span><span class="nw-title">Sparta</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 12 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="100">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-12.jpg" alt="Untitled XII" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-12.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">12</span><span class="nw-title">Untitled XII</span></div>
+          <img src="Libs/projects/notable works/spongbob.jpg" alt="SpongeBob" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/spongbob.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">12</span><span class="nw-title">SpongeBob</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 13 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="0">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-13.jpg" alt="Untitled XIII" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-13.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">13</span><span class="nw-title">Untitled XIII</span></div>
+          <img src="Libs/projects/notable works/squirral.jpg" alt="Squirrel" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/squirral.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">13</span><span class="nw-title">Squirrel</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 14 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="50">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-14.jpg" alt="Untitled XIV" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-14.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">14</span><span class="nw-title">Untitled XIV</span></div>
+          <img src="Libs/projects/notable works/teddy_bear.jpg" alt="Teddy Bear" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/teddy_bear.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">14</span><span class="nw-title">Teddy Bear</span></div>
         </div>
       </div>
 
-      <!-- ── CARD 15 ── -->
       <div class="nw-card" data-reveal="fade-up" data-delay="100">
         <div class="nw-img-wrap">
-          <img src="images/Libs/notable projects/work-15.jpg" alt="Untitled XV" onerror="this.parentElement.classList.add('ph')" />
-          <div class="nw-ph-label">notable projects/work-15.jpg</div>
-          <div class="nw-overlay"><span class="nw-num">15</span><span class="nw-title">Untitled XV</span></div>
+          <img src="Libs/projects/notable works/the_pearl.jpg" alt="The Pearl" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/the_pearl.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">15</span><span class="nw-title">The Pearl</span></div>
+        </div>
+      </div>
+
+      <div class="nw-card" data-reveal="fade-up" data-delay="0">
+        <div class="nw-img-wrap">
+          <img src="Libs/projects/notable works/tiger.jpg" alt="Tiger" onerror="this.parentElement.classList.add('ph')" />
+          <div class="nw-ph-label">notable works/tiger.jpg</div>
+          <div class="nw-overlay"><span class="nw-num">16</span><span class="nw-title">Tiger</span></div>
         </div>
       </div>
 
@@ -558,18 +488,9 @@
     </div>
 
   </section>
+  
 
-  <!-- ╔══════════════════════════════════════════════════════════════╗
-       ║                     PROJECT 52                             ║
-       ╠══════════════════════════════════════════════════════════════╣
-       ║ IMAGES → images/Libs/projects/daily project/               ║
-       ║   Naming: p52-1.jpg, p52-2.jpg … p52-52.jpg               ║
-       ║                                                            ║
-       ║ TO ADD A WEEK — copy any .p52-item block, paste it before  ║
-       ║   the "To be continued" card, update src and Wk number.    ║
-       ║   The strip loops automatically — no JS changes needed.    ║
-       ╚══════════════════════════════════════════════════════════════╝ -->
-  <section id="project-52">
+<section id="project-52">
 
     <div class="p52-header">
       <div class="p52-label-row" data-reveal="fade-right">
@@ -578,12 +499,214 @@
       </div>
       <!-- EDIT: Sub-heading text -->
       <p class="p52-subhead" data-reveal="fade-left" data-delay="150">
-        One drawing every week.<br/>Fifty-two weeks. No excuses.
+        One painting every week.<br/>Fifty-two weeks. No excuses.
       </p>
     </div>
+<!--
+    <div class="p52-strip-wrap">
+      <div class="p52-strip" id="p52Strip">
 
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/1.jpg" alt="Week 1" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/1.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 01</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/2.jpg" alt="Week 2" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/2.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 02</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/3.jpg" alt="Week 3" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/3.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 03</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/4.jpg" alt="Week 4" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/4.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 04</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/5.jpg" alt="Week 5" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/5.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 05</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/6.jpg" alt="Week 6" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/6.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 06</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/7.jpg" alt="Week 7" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/7.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 07</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/8.jpg" alt="Week 8" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/8.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 08</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/9.jpg" alt="Week 9" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/9.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 09</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/10.jpg" alt="Week 10" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/10.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 10</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/11.jpg" alt="Week 11" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/11.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 11</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/12.jpg" alt="Week 12" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/12.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 12</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/13.jpg" alt="Week 13" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/13.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 13</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/14.jpg" alt="Week 14" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/14.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 14</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/15.jpg" alt="Week 15" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/15.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 15</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/16.jpg" alt="Week 16" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/16.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 16</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/17.jpg" alt="Week 17" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/17.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 17</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/18.jpg" alt="Week 18" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/18.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 18</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/19.jpg" alt="Week 19" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/19.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 19</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/20.jpg" alt="Week 20" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/20.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 20</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/bat_monkey.jpg" alt="Bat Monkey" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/bat_monkey.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 21</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/booster.jpg" alt="Booster" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/booster.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 22</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/duck.jpg" alt="Duck" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/duck.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 23</span>
+        </div>
+
+        <div class="p52-item">
+          <div class="p52-img-wrap">
+            <img src="Libs/projects/projects/daily project/fire.jpg" alt="Fire" onerror="this.parentElement.classList.add('ph')" />
+            <div class="p52-ph-label">daily project/fire.jpg</div>
+          </div>
+          <span class="p52-wk">Wk 24</span>
+        </div>
+
+        <div class="p52-tbc">
+          <span>To be<br/>continued <span class="tbc-dot">·</span><span class="tbc-dot">·</span><span class="tbc-dot">·</span></span>
+        </div>
+	--!>
+      </div><!-- /.p52-strip -->
+    </div><!-- /.p52-strip-wrap -->
 
   </section>
+
 
   <!-- ╔══════════════════════════════════════════════════════════════╗
        ║                  FOOTER / CONTACT                          ║
@@ -594,9 +717,7 @@
     <div class="footer-top" data-reveal="fade-up">
       <div class="footer-logo-col">
         <a href="#hero" class="footer-logo" id="footerLogo">
-          <img src="images/logo.png" alt="GuruDev" class="footer-logo-img"
-               onerror="this.closest('.footer-logo').classList.add('logo-fallback')" />
-          <div class="footer-logo-ph">logo.png</div>
+          <span class="footer-logo-text">GuruDev</span>
         </a>
         <p class="footer-tagline">Ink, Space &amp; Strange Geometries.</p><!-- EDIT: Tagline -->
       </div>
@@ -615,7 +736,7 @@
       </div>
       <div class="footer-mail-col">
         <!-- EDIT: Replace with your actual email address (both href and visible text) -->
-        <a href="mailto:hello@gurudev.art" class="footer-mail">hello@gurudev.art</a>
+        <a href="mailto:gaurav.jagadeeshgj@gmail.com" class="footer-mail">gaurav.jagadeeshgj@gmail.com</a>
       </div>
     </div>
 

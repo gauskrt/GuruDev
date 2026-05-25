@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <!-- Compass rose. Colour: signal #e05a2b -->
-  <line x1="50" y1="5"  x2="50" y2="95" stroke="#e05a2b" stroke-width="1.1"/>
-  <line x1="5"  y1="50" x2="95" y2="50" stroke="#e05a2b" stroke-width="1.1"/>
-  <line x1="18" y1="18" x2="82" y2="82" stroke="#e05a2b" stroke-width="0.7" stroke-dasharray="3 5"/>
-  <line x1="82" y1="18" x2="18" y2="82" stroke="#e05a2b" stroke-width="0.7" stroke-dasharray="3 5"/>
-  <polygon points="50,5 54,20 46,20" fill="#e05a2b"/>
-  <circle cx="50" cy="50" r="5" stroke="#e05a2b" stroke-width="1"/>
-</svg>

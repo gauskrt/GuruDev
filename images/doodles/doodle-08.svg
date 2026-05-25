@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none">
-  <!-- Asterisk / 8-point star. Colour: bone #2e2622 -->
-  <line x1="25" y1="4"  x2="25" y2="46" stroke="#2e2622" stroke-width="1.2"/>
-  <line x1="4"  y1="25" x2="46" y2="25" stroke="#2e2622" stroke-width="1.2"/>
-  <line x1="10" y1="10" x2="40" y2="40" stroke="#2e2622" stroke-width="1.2"/>
-  <line x1="40" y1="10" x2="10" y2="40" stroke="#2e2622" stroke-width="1.2"/>
-</svg>

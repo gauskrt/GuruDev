@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60" fill="none">
-  <!-- Crown. Colour: signal #e05a2b -->
-  <path d="M6 50 L6 26 L22 38 L40 10 L58 38 L74 26 L74 50 Z" stroke="#e05a2b" stroke-width="1.2" stroke-linejoin="round"/>
-  <rect x="6" y="48" width="68" height="8" rx="2" stroke="#e05a2b" stroke-width="1"/>
-  <circle cx="22" cy="52" r="2.5" stroke="#e05a2b" stroke-width="0.8"/>
-  <circle cx="40" cy="52" r="2.5" stroke="#e05a2b" stroke-width="0.8"/>
-  <circle cx="58" cy="52" r="2.5" stroke="#e05a2b" stroke-width="0.8"/>
-</svg>

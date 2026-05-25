@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="#2e2622">
-  <!-- 3×3 dot grid. Colour: bone #2e2622 -->
-  <circle cx="10" cy="10" r="2.2"/><circle cx="25" cy="10" r="2.2"/><circle cx="40" cy="10" r="2.2"/>
-  <circle cx="10" cy="25" r="2.2"/><circle cx="25" cy="25" r="2.2"/><circle cx="40" cy="25" r="2.2"/>
-  <circle cx="10" cy="40" r="2.2"/><circle cx="25" cy="40" r="2.2"/><circle cx="40" cy="40" r="2.2"/>
-</svg>

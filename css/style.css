@@ -165,6 +165,13 @@ body {
 }
 .nav-logo.logo-fallback .nav-logo-img         { display: none; }
 .nav-logo.logo-fallback .nav-logo-placeholder { display: flex; }
+.nav-logo-text {
+  font-family: var(--brush);
+  font-size: 1.65rem;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
 
 .nav-links {
   display: flex;
@@ -1245,6 +1252,15 @@ footer {
 }
 .footer-logo.logo-fallback .footer-logo-img { display: none; }
 .footer-logo.logo-fallback .footer-logo-ph  { display: flex; }
+.footer-logo-text {
+  font-family: var(--brush);
+  font-size: 2.2rem;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.5rem;
+}
 .footer-tagline {
   font-family: var(--serif);
   font-size: 0.9rem;

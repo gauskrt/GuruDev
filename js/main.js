@@ -55,17 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
      images/Libs/carousel/
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   const CAROUSEL_IMAGES = [
-    'images/doodles/doodle-01.svg', 'images/doodles/doodle-02.svg',
-    'images/doodles/doodle-03.svg', 'images/doodles/doodle-04.svg',
-    'images/doodles/doodle-05.svg', 'images/doodles/doodle-06.svg',
-    'images/doodles/doodle-07.svg', 'images/doodles/doodle-08.svg',
-    'images/doodles/doodle-09.svg', 'images/doodles/doodle-10.svg',
-    'images/doodles/doodle-11.svg', 'images/doodles/doodle-12.svg',
-    'images/doodles/doodle-13.svg', 'images/doodles/doodle-14.svg',
-    'images/doodles/doodle-15.svg', 'images/doodles/doodle-16.svg',
-    'images/doodles/doodle-17.svg', 'images/doodles/doodle-18.svg',
-    'images/doodles/doodle-19.svg', 'images/doodles/doodle-20.svg',
-    'images/doodles/doodle-21.svg', 'images/doodles/doodle-22.svg',
+    'Libs/projects/notable works/butterfly.jpg',
+    'Libs/projects/notable works/car.jpg',
+    'Libs/projects/notable works/chamelion.jpg',
+    'Libs/projects/notable works/frogs.jpg',
+    'Libs/projects/notable works/hosre.jpg',
+    'Libs/projects/notable works/monkey.jpg',
+    'Libs/projects/notable works/Mouse.jpg',
+    'Libs/projects/notable works/mouse_in_shoe.jpg',
+    'Libs/projects/notable works/on_bench.jpg',
+    'Libs/projects/notable works/panda.jpg',
+    'Libs/projects/notable works/sparta.jpg',
+    'Libs/projects/notable works/spongbob.jpg',
+    'Libs/projects/notable works/squirral.jpg',
+    'Libs/projects/notable works/teddy_bear.jpg',
+    'Libs/projects/notable works/the_pearl.jpg',
+    'Libs/projects/notable works/tiger.jpg',
+    'Libs/projects/projects/daily project/1.jpg',
+    'Libs/projects/projects/daily project/2.jpg',
+    'Libs/projects/projects/daily project/3.jpg',
+    'Libs/projects/projects/daily project/4.jpg',
+    'Libs/projects/projects/daily project/5.jpg',
+    'Libs/projects/projects/daily project/bat_monkey.jpg',
+    'Libs/projects/projects/daily project/duck.jpg',
+    'Libs/projects/projects/daily project/fire.jpg',
   ];
 
   function shuffle(arr) {
@@ -154,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
      4. SPLIT-FLAP DAY COUNTER
      ↓ EDIT THIS DATE — use the format YYYY-MM-DD
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  const START_DATE = new Date('2022-01-06'); // ← This is my start date. The day when history started.
+  const START_DATE = new Date('2022-01-05'); // ← This is my start date. The day when history started.
 
   class SplitFlapDigit {
     constructor(el) {

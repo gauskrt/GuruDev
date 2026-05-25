@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 42" fill="none">
-  <!-- Sunglasses. Colour: bone #2e2622 -->
-  <rect x="4"  y="10" width="32" height="22" rx="10" stroke="#2e2622" stroke-width="1.2"/>
-  <rect x="64" y="10" width="32" height="22" rx="10" stroke="#2e2622" stroke-width="1.2"/>
-  <path d="M36 20 Q50 14 64 20" stroke="#2e2622" stroke-width="1.1"/>
-  <line x1="4"  y1="20" x2="0"   y2="18" stroke="#2e2622" stroke-width="1.1"/>
-  <line x1="96" y1="20" x2="100" y2="18" stroke="#2e2622" stroke-width="1.1"/>
-</svg>
