@@ -36,9 +36,6 @@
     <img class="doodle d22" src="Libs/doodles/doodle-22.svg" alt="" /><!-- crown         -->
   </div>
 
-  <!-- ╔══════════════════════════════════════════╗
-       ║                 NAV                     ║
-       ╚══════════════════════════════════════════╝ -->
   <nav id="navbar">
     <!-- EDIT: Drop your logo file into images/logo.png (png/svg/jpg all work).
          When the file is present it shows as an image; until then a dashed placeholder is shown. -->
@@ -46,18 +43,7 @@
       <span class="nav-logo-text">GuruDev</span>
     </a>
     <div class="nav-links">
-      <a href="#projects">Projects</a>
 
-      <!-- ╔══════════════════════════════════════════╗
-           ║        EXHIBITIONS DROPDOWN             ║
-           ╠══════════════════════════════════════════╣
-           ║ Add / remove .nav-dd-item entries below ║
-           ║ to match your exhibitions.              ║
-           ║ Each href links to:                     ║
-           ║   exhibitions/index.html?id=YOUR-ID     ║
-           ║ The ?id must match an entry in          ║
-           ║   exhibitions/index.html EXHIBITIONS{}  ║
-           ╚══════════════════════════════════════════╝ -->
       <div class="nav-dropdown" id="exhibitionsDropdown">
         <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
           Exhibitions <span class="dd-caret">▾</span>
@@ -72,19 +58,10 @@
         </div>
       </div>
 
-      <a href="#contact">Contact</a>
       <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
     </div>
   </nav>
 
-  <!-- ╔══════════════════════════════════════════╗
-       ║        YEAR EXHIBITIONS NAV             ║
-       ╠══════════════════════════════════════════╣
-       ║ Add / remove .yn-item rows below to     ║
-       ║ match your active years.                ║
-       ║ Each link opens collections/index.html  ║
-       ║ with that year pre-selected.            ║
-       ╚══════════════════════════════════════════╝ -->
   <nav class="year-nav" id="yearNav" aria-label="Exhibitions by year">
     <div class="yn-inner">
       <span class="yn-label">Exhibitions</span>
@@ -111,16 +88,6 @@
     </div>
   </nav>
 
-  <!-- ╔══════════════════════════════════════════╗
-       ║             HERO / ABOUT ME             ║
-       ╠══════════════════════════════════════════╣
-       ║ IMAGES (drop into images/Libs/about/)   ║
-       ║   bg-1.jpg, bg-2.jpg, bg-3.jpg          ║
-       ║     → background carousel slides        ║
-       ║   avatar.jpg → your portrait photo      ║
-       ║                                         ║
-       ║ TEXT EDITS (marked with EDIT below)     ║
-       ╚══════════════════════════════════════════╝ -->
   <section id="hero">
 
     <!-- Background carousel — 3 slides cycle every 4.5s -->
@@ -159,10 +126,9 @@
           <span class="card-label">About me</span>
           <!-- EDIT: Your bio text -->
           <p>
-            I draw from the edges of perception — where the familiar
-            folds into the cosmic. Space, ink, and abstract geometries
-            are my language. Each piece is a different way of seeing
-            the same impossible thing.
+            Gurudev draws from the edges of perception — where the familiarity
+            folds. Space, ink, contrast are his language.
+            Each piece is a different way of seeing.
           </p>
         </div>
       </div>
@@ -174,22 +140,15 @@
       <div class="ticker-track">
         <span>Ink &amp; Space ·&nbsp;</span><span>Abstract Drawing ·&nbsp;</span>
         <span>Weird Perspectives ·&nbsp;</span><span>GuruDev ·&nbsp;</span>
-        <span>Inking ·&nbsp;</span><span>Cosmic Geometry ·&nbsp;</span>
+        <span>Inking ·&nbsp;</span><span>Contrast ·&nbsp;</span>
         <span>Ink &amp; Space ·&nbsp;</span><span>Abstract Drawing ·&nbsp;</span>
-        <span>Weird Perspectives ·&nbsp;</span><span>GuruDev ·&nbsp;</span>
-        <span>Inking ·&nbsp;</span><span>Cosmic Geometry ·&nbsp;</span>
+        <span>Perspectives ·&nbsp;</span><span>GuruDev ·&nbsp;</span>
+        <span>Inking ·&nbsp;</span><span>Cosmic ·&nbsp;</span>
       </div>
     </div>
 
   </section>
 
-  <!-- ╔══════════════════════════════════════════╗
-       ║              COUNTER STRIP              ║
-       ╠══════════════════════════════════════════╣
-       ║ The number = days since START_DATE       ║
-       ║ Change START_DATE in js/main.js          ║
-       ║ Search for:  const START_DATE =          ║
-       ╚══════════════════════════════════════════╝ -->
   <section id="counter-section">
 
     <div class="counter-noise"></div>
@@ -218,17 +177,6 @@
 
   </section>
 
-  <!-- ╔══════════════════════════════════════════════════════════════╗
-       ║                   IMAGE CAROUSELS                          ║
-       ╠══════════════════════════════════════════════════════════════╣
-       ║ Two auto-scrolling strips — one right-to-left, one left-   ║
-       ║ to-right. 50 images picked randomly, no repeats.           ║
-       ║                                                             ║
-       ║ TO ADD YOUR ARTWORK IMAGES:                                 ║
-       ║  1. Drop files into  images/Libs/carousel/                  ║
-       ║  2. In js/main.js find CAROUSEL_IMAGES and replace the      ║
-       ║     array entries with your image paths.                    ║
-       ╚══════════════════════════════════════════════════════════════╝ -->
   <section id="img-carousels" aria-hidden="true">
     <div class="ic-row ic-rtl">
       <div class="ic-track" id="icTrack1"></div>
@@ -238,11 +186,7 @@
     </div>
   </section>
 
-  <!-- ╔══════════════════════════════════════════╗
-       ║          INSPIRATION & STYLE            ║
-       ╠══════════════════════════════════════════╣
-       ║ IMAGE → images/Libs/about/bg-3.jpg      ║
-       ╚══════════════════════════════════════════╝ -->
+
   <section id="inspiration">
 
     <div class="inspire-img-wrap">
@@ -269,26 +213,6 @@
 
   </section>
 
-  <!-- ╔══════════════════════════════════════════════════════════════╗
-       ║                    NOTABLE WORKS                           ║
-       ╠══════════════════════════════════════════════════════════════╣
-       ║ IMAGES → images/Libs/notable projects/                     ║
-       ║   Naming: work-1.jpg, work-2.jpg … (any format works)      ║
-       ║                                                            ║
-       ║ CARD SIZES — add a class alongside "nw-card":              ║
-       ║   (none)       → square  (4 of 12 columns)                 ║
-       ║   nw-feature   → big hero card (8 cols × 2 rows)           ║
-       ║   nw-wide      → wide landscape (8 cols × 1 row)           ║
-       ║   nw-tall      → tall portrait  (4 cols × 2 rows)          ║
-       ║                                                            ║
-       ║ TO ADD A CARD — copy any block below, paste after          ║
-       ║   the last card, and update src / alt / num / title        ║
-       ║                                                            ║
-       ║ CLICK BEHAVIOUR                                            ║
-       ║   • Hover  → siblings dim                                  ║
-       ║   • 1st click → card pops forward                          ║
-       ║   • 2nd click → opens full-screen lightbox                 ║
-       ╚══════════════════════════════════════════════════════════════╝ -->
   <section id="projects">
 
     <div class="nw-header" data-reveal="fade-up">
