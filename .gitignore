@@ -1,8 +1,6 @@
-# Python scripts
-*.py
-requirements.txt
+# All scripts, configs, and data files
+Support/
 
 # Downloaded images cache
 downloaded_images/
-
-art.json
+stories/
