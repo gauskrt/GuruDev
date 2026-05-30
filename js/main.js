@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Libs/projects/projects/daily project/17.jpg',
     'Libs/projects/projects/daily project/18.jpg',
     'Libs/projects/projects/daily project/19.jpg',
-    'Libs/projects/projects/daily project/20pg',
+    'Libs/projects/projects/daily project/20.jpg',
     'Libs/projects/projects/daily project/bat_monkey.jpg',
     'Libs/projects/projects/daily project/duck.jpg',
     'Libs/projects/projects/daily project/fire.jpg',
@@ -279,37 +279,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     6. SCROLL PROJECT — drag-to-pan
-     Mouse drag and touch swipe both work.
+     6. SCROLL PROJECT — auto-looping panorama
+     Clone the image so the CSS translateX(-50%)
+     animation loops seamlessly end-to-end.
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  const spCinematic = document.getElementById('spCinematic');
-  const spInner     = document.getElementById('spScrollInner');
-  const spDragHint  = document.getElementById('spDragHint');
+  const spTrack = document.getElementById('spTrack');
+  const spImg   = document.getElementById('spImg');
 
-  if (spCinematic && spInner) {
-    let isDragging = false, startX = 0, startSL = 0;
-
-    spCinematic.addEventListener('mousedown', e => {
-      isDragging = true; startX = e.pageX; startSL = spInner.scrollLeft;
-    });
-    document.addEventListener('mouseup', () => { isDragging = false; });
-    spCinematic.addEventListener('mousemove', e => {
-      if (!isDragging) return;
-      e.preventDefault();
-      spInner.scrollLeft = startSL - (e.pageX - startX) * 1.4;
-    });
-
-    let touchStartX = 0, touchSL = 0;
-    spCinematic.addEventListener('touchstart', e => {
-      touchStartX = e.touches[0].pageX; touchSL = spInner.scrollLeft;
-    }, { passive: true });
-    spCinematic.addEventListener('touchmove', e => {
-      spInner.scrollLeft = touchSL - (e.touches[0].pageX - touchStartX);
-    }, { passive: true });
-
-    if (spDragHint) {
-      spInner.addEventListener('scroll', () => spDragHint.classList.add('hidden'), { once: true });
-    }
+  if (spTrack && spImg) {
+    const clone = spImg.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.setAttribute('aria-hidden', 'true');
+    spTrack.appendChild(clone);
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

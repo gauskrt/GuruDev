@@ -1010,29 +1010,26 @@ body {
   position: relative;
   height: clamp(380px, 60vh, 640px);
   overflow: hidden;
-  cursor: grab;
   user-select: none;
 }
-.sp-cinematic:active { cursor: grabbing; }
 
-/* Horizontally scrollable inner track */
 .sp-scroll-inner {
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  cursor: inherit;
+  overflow: hidden;
 }
-.sp-scroll-inner::-webkit-scrollbar { display: none; }
+
+@keyframes sp-loop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
 .sp-img-track {
   height: 100%;
-  min-width: 280vw;
   position: relative;
   background: var(--ink);
   display: flex;
+  animation: sp-loop 240s linear infinite;
 }
 .sp-img-track img {
   height: 100%;
@@ -1043,26 +1040,6 @@ body {
   flex-shrink: 0;
   pointer-events: none;
 }
-
-/* Drag hint overlay */
-.sp-drag-hint {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #fff;
-  background: rgba(20,10,5,0.55);
-  padding: 0.55rem 1.2rem;
-  pointer-events: none;
-  backdrop-filter: blur(6px);
-  transition: opacity 0.6s ease;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-.sp-drag-hint.hidden { opacity: 0; }
 
 /* Text float — absolutely over the cinematic, outside scroll area */
 .sp-text-float {
