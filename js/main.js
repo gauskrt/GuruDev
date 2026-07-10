@@ -279,18 +279,76 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     6. SCROLL PROJECT — auto-looping panorama
-     Clone the image so the CSS translateX(-50%)
-     animation loops seamlessly end-to-end.
+     6. SCROLL PROJECT — auto-scrolling panorama
+     The image is cloned so it loops seamlessly.
+     It auto-scrolls, and the user can also drag or
+     wheel-scroll it; auto-scroll pauses briefly on
+     interaction, then resumes.
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   const spTrack = document.getElementById('spTrack');
   const spImg   = document.getElementById('spImg');
+  const spInner = document.getElementById('spScrollInner');
 
-  if (spTrack && spImg) {
+  if (spTrack && spImg && spInner) {
     const clone = spImg.cloneNode(true);
     clone.removeAttribute('id');
     clone.setAttribute('aria-hidden', 'true');
     spTrack.appendChild(clone);
+
+    let half = 0;
+    const measure = () => { half = spTrack.scrollWidth / 2; };
+    if (spImg.complete) measure(); else spImg.addEventListener('load', measure);
+    window.addEventListener('resize', measure, { passive: true });
+
+    const SPEED = 0.9;          // px per frame — increase for faster auto-scroll
+    const RESUME_MS = 2000;     // idle time before auto-scroll resumes
+    let paused = false;
+    let resumeTimer;
+
+    const pauseAuto = () => {
+      paused = true;
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => { paused = false; }, RESUME_MS);
+    };
+
+    const loop = () => {
+      if (half) {
+        if (!paused) spInner.scrollLeft += SPEED;
+        if (spInner.scrollLeft >= half) spInner.scrollLeft -= half;
+      }
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+
+    // Drag to pan
+    let dragging = false, startX = 0, startScroll = 0;
+    spInner.addEventListener('pointerdown', e => {
+      dragging = true;
+      startX = e.clientX;
+      startScroll = spInner.scrollLeft;
+      spInner.setPointerCapture(e.pointerId);
+      spInner.classList.add('dragging');
+      pauseAuto();
+    });
+    spInner.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      spInner.scrollLeft = startScroll - (e.clientX - startX);
+      pauseAuto();
+    });
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      spInner.classList.remove('dragging');
+      pauseAuto();
+    };
+    spInner.addEventListener('pointerup', endDrag);
+    spInner.addEventListener('pointercancel', endDrag);
+
+    // Wheel to scroll horizontally
+    spInner.addEventListener('wheel', e => {
+      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (delta) { spInner.scrollLeft += delta; pauseAuto(); }
+    }, { passive: true });
   }
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -356,7 +414,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', e => { if (!e.target.closest('.nw-grid')) focusCard(null); });
   lbClose?.addEventListener('click', closeLb);
+  document.getElementById('lbCloseCircle')?.addEventListener('click', closeLb);
   lb?.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+
+  /* Carousel images + inspiration image → open in the lightbox */
+  document.getElementById('img-carousels')?.addEventListener('click', e => {
+    const img = e.target.closest('.ic-img');
+    if (img?.naturalWidth) openLb(img.src, '');
+  });
+  const inspireClickImg = document.getElementById('inspireParallax');
+  inspireClickImg?.addEventListener('click', () => {
+    if (inspireClickImg.naturalWidth) openLb(inspireClickImg.src, '');
+  });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') { closeLb(); focusCard(null); }
   });

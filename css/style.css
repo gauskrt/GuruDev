@@ -316,6 +316,7 @@ body {
   border: 1px solid rgba(224,90,43,0.08);
   transition: opacity 0.3s;
 }
+.ic-img { cursor: pointer; }
 .ic-img:hover { opacity: 0.72; }
 .ic-img-ph {
   height: 100%;
@@ -803,6 +804,7 @@ body {
   object-position: center top;
   opacity: 0.35;
   will-change: transform;
+  cursor: pointer;
 }
 .inspire-img-placeholder {
   position: absolute; inset: 0;
@@ -987,6 +989,19 @@ body {
   object-fit: contain;
   box-shadow: 0 12px 60px rgba(28,23,20,0.15);
 }
+.lb-close-circle {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--signal);
+  color: var(--signal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.lb-close-circle:hover { background: var(--signal); color: #fff; }
 #lbCap {
   font-family: var(--serif);
   font-size: 0.9rem;
@@ -1017,20 +1032,21 @@ body {
 .sp-scroll-inner {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
 }
-
-@keyframes sp-loop {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+.sp-scroll-inner::-webkit-scrollbar { display: none; }
+.sp-scroll-inner.dragging { cursor: grabbing; }
 
 .sp-img-track {
   height: 100%;
   position: relative;
   background: var(--ink);
   display: flex;
-  animation: sp-loop 25s linear infinite;
+  width: max-content;
 }
 .sp-img-track img {
   height: 100%;

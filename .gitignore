@@ -4,3 +4,14 @@ Support/
 # Downloaded images cache
 downloaded_images/
 stories/
+
+# AI assistant files & configs
+.claude/
+.cursor/
+.aider*
+.github/copilot-instructions.md
+AGENTS.md
+CLAUDE.md
+Claude.md
+GEMINI.md
+.mcp.json
