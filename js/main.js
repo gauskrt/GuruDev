@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
      4. SPLIT-FLAP DAY COUNTER
      ↓ EDIT THIS DATE — use the format YYYY-MM-DD
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  const START_DATE = new Date('2022-01-05'); // ← This is my start date. The day when history started.
+  const START_DATE = new Date('2021-12-24'); // ← This is my start date. The day when history started.
 
   class SplitFlapDigit {
     constructor(el) {
