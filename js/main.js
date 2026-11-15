@@ -430,4 +430,64 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') { closeLb(); focusCard(null); }
   });
 
+  /* ─────────────────────────────────────────────────────────────
+     9. IN YOUR SPACE — "Try another piece" swaps the art in a room
+        Lists are split by shape so the frames never change size.
+     ───────────────────────────────────────────────────────────── */
+  const NW = 'Libs/projects/notable works/';
+  const ROOM_ART = {
+    square:   [['panda','Panda'],['the_pearl','The Pearl'],['butterfly','Butterfly'],['frogs','Frogs'],
+               ['on_bench','On the Bench'],['squirral','Squirrel'],['car','Car']],
+    portrait: [['tiger','Tiger'],['chamelion','Chameleon'],['hosre','Horse'],['sparta','Sparta'],
+               ['teddy_bear','Teddy Bear'],['Mouse','Mouse'],['mouse_in_shoe','Mouse in a Shoe']]
+  };
+  const fileOf = src => decodeURIComponent(src.split('/').pop().replace(/\.jpg$/i, ''));
+
+  document.querySelectorAll('.room-card').forEach(card => {
+    const btn = card.querySelector('.room-swap');
+    const titleEl = card.querySelector('.room-art-title');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const frames = [...card.querySelectorAll('.art')];
+      const inRoom = frames.map(f => fileOf(f.querySelector('img').src));
+      const titles = [];
+      frames.forEach((frame, i) => {
+        const list = ROOM_ART[frame.dataset.shape] || ROOM_ART.square;
+        const cur  = list.findIndex(a => a[0] === inRoom[i]);
+        let next = cur;
+        // step forward until we land on a piece not already hanging in this room
+        for (let k = 1; k <= list.length; k++) {
+          const cand = (cur + k) % list.length;
+          if (!inRoom.includes(list[cand][0])) { next = cand; break; }
+        }
+        const [file, title] = list[next < 0 ? 0 : next];
+        inRoom[i] = file;
+        titles.push(title);
+        const img = frame.querySelector('img');
+        frame.classList.add('swapping');
+        setTimeout(() => {
+          img.src = NW + file + '.jpg';
+          img.alt = title + ' by GuruDev';
+          img.onload = () => frame.classList.remove('swapping');
+        }, 250);
+      });
+      if (titleEl) {
+        titleEl.textContent = titles.length === 1 ? titles[0]
+          : titles.length === 2 ? titles.join(' & ')
+          : titles.slice(0, -1).join(', ') + ' & ' + titles.slice(-1);
+      }
+    });
+  });
+
+  /* ─────────────────────────────────────────────────────────────
+     10. Light protection: no right-click "Save image" on artwork,
+         plus a live year in the footer.
+     ───────────────────────────────────────────────────────────── */
+  document.addEventListener('contextmenu', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  });
+  document.querySelectorAll('img').forEach(i => i.setAttribute('draggable', 'false'));
+  const yearNow = document.getElementById('yearNow');
+  if (yearNow) yearNow.textContent = new Date().getFullYear();
+
 });

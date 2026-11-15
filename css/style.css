@@ -1405,3 +1405,293 @@ footer {
   .cursor-dot, .cursor-ring { display: none; }
   body { cursor: auto; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   03 · IN YOUR SPACE — CSS-drawn room mockups
+   All sizes use cqw (container width) so each room scales as one.
+   ═══════════════════════════════════════════════════════════════ */
+#in-your-space {
+  padding: var(--section) 0;
+  border-top: 1px solid rgba(224,90,43,0.1);
+}
+.iys-header, .buy-header { padding: 0 var(--gutter); margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.iys-sub, .buy-sub {
+  max-width: 46ch;
+  margin-top: 1.5rem;
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  color: var(--fog);
+}
+.iys-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(18px, 3vw, 40px);
+  padding: 0 var(--gutter);
+}
+.iys-note {
+  padding: 2rem var(--gutter) 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--fog);
+}
+
+.room-card { margin: 0; position: relative; z-index: 3; }   /* sit above the doodle layer */
+.room {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  container-type: inline-size;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 20px 40px -24px rgba(23,17,13,0.45);
+}
+.room span { position: absolute; display: block; }
+.room > div { position: absolute; }
+
+.r-wall  { inset: 0 0 20% 0; }
+.r-floor { left: 0; right: 0; bottom: 0; height: 20%; }
+.r-floor::before {             /* skirting board */
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1.1cqw;
+  background: rgba(255,255,255,0.55); box-shadow: 0 0.3cqw 0.6cqw rgba(0,0,0,0.12);
+}
+
+/* Framed artwork */
+.art {
+  width: var(--w, 20%);
+  transform: translateX(-50%);
+  background: #fbfaf7;                         /* mat */
+  padding: 1.3cqw;
+  border: 0.75cqw solid #1d1916;               /* frame */
+  box-shadow: 0 1.4cqw 2.4cqw -0.6cqw rgba(0,0,0,0.38), 0 0.3cqw 0.6cqw rgba(0,0,0,0.18);
+  z-index: 2;
+}
+.art img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: opacity 0.35s ease;
+}
+.art[data-shape="portrait"] img { aspect-ratio: 4 / 5; }
+.art.swapping img { opacity: 0; }
+
+/* ── Living room ── */
+.room-living .r-wall {
+  background:
+    radial-gradient(ellipse at 18% 0%, rgba(255,250,240,0.75), transparent 60%),
+    linear-gradient(#e9dccb, #dccab4);
+}
+.room-living .r-floor {
+  background:
+    linear-gradient(rgba(0,0,0,0.18), transparent 40%),
+    repeating-linear-gradient(90deg, #a87a51 0 9cqw, #9c6f48 9cqw 9.15cqw, #b2845a 9.15cqw 18cqw, #9c6f48 18cqw 18.15cqw);
+}
+.sofa { left: 23%; width: 54%; bottom: 13%; height: 27%; z-index: 3; }
+.sofa-back  { left: 4%; right: 4%; top: 0; height: 62%; background: #4f6b63; border-radius: 2.2cqw 2.2cqw 0.6cqw 0.6cqw; box-shadow: inset 0 -1cqw 2cqw rgba(0,0,0,0.15); }
+.sofa-seat  { left: 4%; right: 4%; top: 48%; height: 34%; background: #5b7a71; border-radius: 0.8cqw; box-shadow: 0 0.6cqw 1cqw rgba(0,0,0,0.18); }
+.sofa-arm   { top: 30%; width: 8%; height: 56%; background: #4a655d; border-radius: 1.6cqw; }
+.sofa-arm.a-l { left: 0; } .sofa-arm.a-r { right: 0; }
+.cushion    { top: 18%; width: 14%; height: 36%; border-radius: 1cqw; }
+.cushion.c1 { left: 14%; background: #e05a2b; transform: rotate(-8deg); }
+.cushion.c2 { right: 14%; background: #efe4d3; transform: rotate(7deg); }
+.leg        { bottom: 0; width: 1.2%; height: 18%; background: #2a211b; }
+.leg.g1 { left: 9%; } .leg.g2 { right: 9%; }
+.floor-lamp { right: 9%; bottom: 13%; width: 9%; height: 58%; z-index: 3; }
+.floor-lamp .shade { left: 0; right: 0; top: 0; height: 18%; background: #f4ead9; clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%); box-shadow: 0 0 6cqw 2cqw rgba(255,226,170,0.45); }
+.floor-lamp .stem  { left: 48%; width: 4%; top: 18%; bottom: 3%; background: #2a211b; }
+.floor-lamp .base  { left: 25%; right: 25%; bottom: 0; height: 3%; background: #2a211b; border-radius: 50%; }
+.plant { left: 7%; bottom: 13%; width: 10%; height: 40%; z-index: 3; }
+.plant .pot  { left: 22%; right: 22%; bottom: 0; height: 26%; background: #c4673f; clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%); }
+.plant .leaf { width: 46%; height: 52%; background: #3f6b45; border-radius: 0 100% 0 100%; bottom: 20%; }
+.plant .l1 { left: 4%;  transform: rotate(-30deg); }
+.plant .l2 { left: 40%; transform: rotate(20deg); background: #4d7d52; }
+.plant .l3 { left: 20%; bottom: 40%; transform: rotate(-5deg); background: #355d3b; }
+.plant .l4 { left: 46%; bottom: 46%; transform: rotate(40deg); height: 40%; }
+
+/* ── Bedroom ── */
+.room-bed .r-wall {
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(255,255,255,0.5), transparent 55%),
+    linear-gradient(#c7cdbb, #b7bfa9);
+}
+.room-bed .r-floor { background: linear-gradient(rgba(0,0,0,0.15), transparent 50%), #cdb79b; }
+.room-bed .art { top: 10%; }
+.bed { left: 22%; width: 56%; bottom: 6%; height: 40%; z-index: 3; }
+.headboard { left: 0; right: 0; top: 0; height: 55%; background: #8a6b55; border-radius: 1.6cqw 1.6cqw 0 0; box-shadow: inset 0 0 0 0.6cqw rgba(0,0,0,0.06); }
+.pillow    { top: 30%; width: 28%; height: 22%; background: #fbf7f0; border-radius: 1.4cqw; box-shadow: 0 0.4cqw 0.8cqw rgba(0,0,0,0.12); }
+.pillow.p1 { left: 14%; } .pillow.p2 { right: 14%; }
+.duvet     { left: -2%; right: -2%; top: 46%; bottom: 0; background: linear-gradient(#f3eee6, #e2dbcf); border-radius: 1cqw 1cqw 0 0; }
+.throw     { left: -2%; right: -2%; top: 66%; height: 16%; background: #e05a2b; opacity: 0.85; }
+.stand     { bottom: 6%; width: 10%; height: 17%; background: #6e5442; border-radius: 0.4cqw; z-index: 3; }
+.stand.st-l { left: 10%; } .stand.st-r { right: 10%; }
+.mini-lamp { left: 25%; width: 50%; top: -70%; height: 70%; background: #f4ead9; border-radius: 3cqw 3cqw 0.5cqw 0.5cqw; box-shadow: 0 0 4cqw 1.2cqw rgba(255,226,170,0.45); }
+
+/* ── Study / office ── */
+.room-office .r-wall {
+  background:
+    radial-gradient(ellipse at 30% 0%, rgba(255,255,255,0.18), transparent 60%),
+    linear-gradient(#34404f, #2a3441);
+}
+.room-office .r-floor { background: linear-gradient(rgba(0,0,0,0.25), transparent 50%), #8d8478; }
+.room-office .r-floor::before { background: rgba(255,255,255,0.25); }
+.room-office .art { border-color: #c9a46b; }       /* oak frame on dark wall */
+.shelf { right: 8%; top: 22%; width: 22%; height: 14%; z-index: 2; }
+.shelf .board { left: 0; right: 0; bottom: 0; height: 12%; background: #c9a46b; }
+.shelf .book  { bottom: 12%; width: 9%; }
+.shelf .b1 { left: 8%;  height: 70%; background: #e05a2b; }
+.shelf .b2 { left: 18%; height: 82%; background: #e8dfd5; }
+.shelf .b3 { left: 28%; height: 64%; background: #2563eb; }
+.shelf .b4 { left: 40%; height: 74%; background: #e8dfd5; transform: rotate(14deg); transform-origin: bottom left; }
+.desk { left: 46%; width: 44%; bottom: 8%; height: 46%; z-index: 3; }
+.desk-top { left: 0; right: 0; top: 40%; height: 5%; background: #c9a46b; }
+.desk-leg { top: 45%; bottom: 0; width: 2.5%; background: #1d1916; }
+.desk-leg.d1 { left: 5%; } .desk-leg.d2 { right: 5%; }
+.monitor  { left: 30%; width: 40%; top: 0; height: 32%; background: #111; border: 0.5cqw solid #1d1916; border-radius: 0.4cqw; box-shadow: inset 0 0 4cqw rgba(37,99,235,0.35); }
+.monitor-stand { left: 48%; width: 4%; top: 32%; height: 8%; background: #1d1916; }
+.mug { left: 80%; width: 6%; top: 30%; height: 10%; background: #f3ede6; border-radius: 0 0 0.6cqw 0.6cqw; }
+.chair { left: 52%; width: 16%; bottom: 3%; height: 38%; z-index: 4; }
+.chair-back { left: 10%; right: 10%; top: 0; height: 52%; background: #e05a2b; border-radius: 1.4cqw 1.4cqw 0.6cqw 0.6cqw; }
+.chair-seat { left: 0; right: 0; top: 52%; height: 12%; background: #c64e24; border-radius: 0.6cqw; }
+.chair-post { left: 46%; width: 8%; top: 64%; height: 28%; background: #1d1916; }
+.chair-base { left: 10%; right: 10%; bottom: 0; height: 8%; background: #1d1916; border-radius: 0.6cqw; }
+
+/* ── Café / lobby ── */
+.room-cafe .r-wall {
+  background:
+    radial-gradient(circle at 27% 8%, rgba(255,236,200,0.55), transparent 22%),
+    radial-gradient(circle at 50% 8%, rgba(255,236,200,0.55), transparent 22%),
+    radial-gradient(circle at 73% 8%, rgba(255,236,200,0.55), transparent 22%),
+    linear-gradient(#d9d4cc, #c9c3ba);
+}
+.room-cafe .r-floor {
+  background:
+    linear-gradient(rgba(0,0,0,0.2), transparent 50%),
+    repeating-conic-gradient(#3b3631 0 25%, #4a443e 0 50%) 0 0 / 5cqw 5cqw;
+}
+.pendant { top: 0; width: 6%; height: 12%; z-index: 4; transform: translateX(-50%); }
+.pendant::before { content: ''; position: absolute; left: 49%; width: 2%; top: 0; height: 60%; background: #1d1916; }
+.pendant::after  { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: #1d1916; border-radius: 3cqw 3cqw 0 0; box-shadow: 0 1.5cqw 3cqw 0.4cqw rgba(255,226,170,0.55); }
+.pendant.pd1 { left: 27%; } .pendant.pd2 { left: 50%; } .pendant.pd3 { left: 73%; }
+.banquette { left: 10%; width: 80%; bottom: 14%; height: 24%; z-index: 3; }
+.bq-back { left: 0; right: 0; top: 0; height: 60%; background: repeating-linear-gradient(90deg, #b9532a 0 7cqw, #a84a25 7cqw 7.3cqw); border-radius: 0.8cqw 0.8cqw 0 0; }
+.bq-seat { left: -1%; right: -1%; top: 58%; height: 42%; background: #8e3f20; border-radius: 0.4cqw; }
+.table { bottom: 4%; width: 12%; height: 24%; z-index: 4; }
+.table.t1 { left: 26%; } .table.t2 { left: 62%; }
+.t-top { left: 0; right: 0; top: 0; height: 9%; background: #e8dfd5; border-radius: 0.3cqw; }
+.t-leg { left: 46%; width: 8%; top: 9%; bottom: 0; background: #1d1916; }
+.cup   { left: 38%; width: 18%; top: -16%; height: 16%; background: #fff; border-radius: 0 0 0.6cqw 0.6cqw; }
+
+/* Captions */
+.room-card figcaption {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2rem 1rem;
+  padding-top: 1rem;
+}
+.room-type {
+  grid-column: 1 / -1;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.room-art-title { font-family: var(--sans); font-weight: 700; font-size: 1.25rem; color: var(--cream); }
+.room-meta { grid-column: 1; font-family: var(--mono); font-size: 0.75rem; color: var(--fog); }
+.room-actions { grid-column: 2; grid-row: 2 / span 2; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 0.35rem; }
+.room-swap, .room-quote {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--bone);
+  border-bottom: 1px solid rgba(224,90,43,0.4);
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+.room-swap:hover, .room-quote:hover { color: var(--signal); }
+
+/* ═══════════════════════════════════════════════════════════════
+   04 · PRINTS & ORIGINALS — quote only
+   ═══════════════════════════════════════════════════════════════ */
+#buy {
+  padding: var(--section) 0;
+  border-top: 1px solid rgba(224,90,43,0.1);
+  background: var(--deep);
+}
+.buy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 2vw, 28px);
+  padding: 0 var(--gutter);
+}
+.buy-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.6rem, 2.6vw, 2.4rem);
+  background: var(--void);
+  border: 1px solid rgba(224,90,43,0.18);
+}
+.buy-card-biz { border-color: var(--signal); }
+.buy-num {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--signal);
+  opacity: 0.25;
+  position: absolute;
+  top: 1.2rem; right: 1.4rem;
+}
+.buy-card h3 { font-family: var(--sans); font-weight: 800; font-size: 1.7rem; color: var(--cream); margin-bottom: 0.8rem; letter-spacing: -0.01em; }
+.buy-card p  { font-size: 1.12rem; margin-bottom: 1rem; }
+.buy-card ul { list-style: none; margin-bottom: 1.8rem; }
+.buy-card li { font-family: var(--mono); font-size: 0.78rem; color: var(--fog); padding: 0.35rem 0; border-top: 1px dashed rgba(224,90,43,0.2); }
+.buy-card li::before { content: '— '; color: var(--signal); }
+.buy-ctas { margin-top: auto; display: flex; flex-direction: column; gap: 0.6rem; }
+.btn-ig, .btn-mail {
+  display: block;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.9rem 1rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-ig   { background: var(--signal); color: #fff; border: 1px solid var(--signal); }
+.btn-ig:hover { background: var(--cream); border-color: var(--cream); color: var(--void); }
+.btn-mail { border: 1px solid var(--cream); color: var(--cream); }
+.btn-mail:hover { background: var(--cream); color: var(--void); }
+.buy-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: clamp(2.5rem, 4vw, 3.5rem) var(--gutter) 0;
+}
+.buy-steps li { font-size: 1.1rem; color: var(--bone); }
+.buy-steps span { display: block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.2em; color: var(--signal); margin-bottom: 0.4rem; }
+
+/* ═══════════════════════════════════════════════════════════════
+   RIGHTS & USAGE
+   ═══════════════════════════════════════════════════════════════ */
+#rights {
+  padding: clamp(3rem, 6vw, 5rem) var(--gutter);
+  border-top: 1px solid rgba(224,90,43,0.1);
+}
+.rights-inner { max-width: 72ch; }
+.rights-inner p { font-size: 1.05rem; color: var(--fog); margin-bottom: 0.9rem; }
+.rights-inner strong, .rights-inner em { color: var(--bone); }
+.rights-inner a, .footer-rights-link { color: var(--signal); border-bottom: 1px solid rgba(224,90,43,0.4); }
+
+@media (max-width: 900px) {
+  .iys-grid { grid-template-columns: 1fr; }
+  .buy-grid, .buy-steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .room-card figcaption { grid-template-columns: 1fr; }
+  .room-actions { grid-column: 1; grid-row: auto; flex-direction: row; justify-content: flex-start; gap: 1.2rem; margin-top: 0.4rem; }
+}
+.footer-quote-note { font-family: var(--mono); font-size: 0.72rem; color: var(--fog); margin-top: 0.6rem; }
+.footer-mail-col { flex-direction: column; align-items: flex-end; }
+@media (max-width: 900px) { .footer-mail-col { align-items: center; } }
+@media (max-width: 560px) { .nav-links a[href="#in-your-space"] { display: none; } }

@@ -96,6 +96,28 @@ That's it — the page builds itself from the data.
 
 ---
 
+## In Your Space (room mockups)
+
+Section 03 shows the art hanging in four CSS-drawn rooms: living room, bedroom, study and café/lobby.
+They need no photos or licences and scale with the screen.
+
+- To change the art in a room, edit the `<img src>` inside that room's `.art` frame in `index.html`.
+- Each frame has `data-shape="square"` or `data-shape="portrait"` (4:5). The **Try another piece** button
+  cycles through `ROOM_ART` in `js/main.js`; add new pieces to the right list there.
+- To move or resize a frame, change its inline `style="--w:21%; left:50%; top:7%;"`.
+
+## Prints & Originals (quote only)
+
+Section 04 has no prices. Every button opens an Instagram DM (`ig.me/m/artbygurudev`) or a pre-filled email
+to `artbygurudev@gmail.com`. Put images of available works in `Libs/projects/For Sale/Originals/` and
+`Libs/projects/For Sale/Prints/`.
+
+## Rights & Usage
+
+The intellectual-property notice is the `#rights` section just above the footer. The footer of every page links to it.
+
+---
+
 ## Dark Mode
 
 Click the **◐** button in the top-right of the nav. The preference is saved in `localStorage` and persists across visits.

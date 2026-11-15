@@ -59,6 +59,8 @@
 <!--        </div>-->
 <!--      </div>-->
 
+      <a href="#in-your-space">In Your Space</a>
+      <a href="#buy">Buy Art</a>
       <a href="#contact">Contact</a>
 
       <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
@@ -628,6 +630,257 @@
 
 
   <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║                  IN YOUR SPACE — room mockups              ║
+       ╠══════════════════════════════════════════════════════════════╣
+       ║ Rooms are drawn in CSS (no stock photos, no licences).     ║
+       ║ To change the art in a room, edit the <img src> inside     ║
+       ║ the .art frame. data-shape="square" or "portrait" decides  ║
+       ║ which pieces the "Try another piece" button cycles through ║
+       ║ (lists live in js/main.js → ROOM_ART).                     ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="in-your-space">
+
+    <div class="iys-header" data-reveal="fade-up">
+      <span class="section-num">03</span>
+      <h2 class="section-title">In Your<br/>Space</h2>
+      <p class="iys-sub">
+        See how the work lives off the page: in a home, a bedroom, a studio,
+        or a café wall. Tap <em>Try another piece</em> to swap the artwork in any room.
+      </p>
+    </div>
+
+    <div class="iys-grid">
+
+      <!-- 1 · LIVING ROOM -->
+      <figure class="room-card" data-reveal="fade-up">
+        <div class="room room-living">
+          <div class="r-wall"></div>
+          <div class="r-floor"></div>
+          <div class="art art-single" data-shape="portrait" style="--w:21%; left:50%; top:7%;">
+            <img src="Libs/projects/notable works/tiger.jpg" alt="Tiger by GuruDev" />
+          </div>
+          <div class="plant"><span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span><span class="leaf l4"></span><span class="pot"></span></div>
+          <div class="sofa">
+            <span class="sofa-back"></span><span class="sofa-seat"></span>
+            <span class="sofa-arm a-l"></span><span class="sofa-arm a-r"></span>
+            <span class="cushion c1"></span><span class="cushion c2"></span>
+            <span class="leg g1"></span><span class="leg g2"></span>
+          </div>
+          <div class="floor-lamp"><span class="shade"></span><span class="stem"></span><span class="base"></span></div>
+        </div>
+        <figcaption>
+          <span class="room-type">Living room</span>
+          <span class="room-art-title">Tiger</span>
+          <span class="room-meta">Example size · 24 × 30 in, framed</span>
+          <span class="room-actions">
+            <button class="room-swap" type="button">Try another piece ↻</button>
+            <a href="#buy" class="room-quote">Ask for a quote →</a>
+          </span>
+        </figcaption>
+      </figure>
+
+      <!-- 2 · BEDROOM -->
+      <figure class="room-card" data-reveal="fade-up" data-delay="100">
+        <div class="room room-bed">
+          <div class="r-wall"></div>
+          <div class="r-floor"></div>
+          <div class="art" data-shape="square" style="--w:15%; left:40%; top:10%;">
+            <img src="Libs/projects/notable works/panda.jpg" alt="Panda by GuruDev" />
+          </div>
+          <div class="art" data-shape="square" style="--w:15%; left:60%; top:10%;">
+            <img src="Libs/projects/notable works/the_pearl.jpg" alt="The Pearl by GuruDev" />
+          </div>
+          <div class="stand st-l"><span class="mini-lamp"></span></div>
+          <div class="stand st-r"><span class="mini-lamp"></span></div>
+          <div class="bed">
+            <span class="headboard"></span>
+            <span class="pillow p1"></span><span class="pillow p2"></span>
+            <span class="duvet"></span><span class="throw"></span>
+          </div>
+        </div>
+        <figcaption>
+          <span class="room-type">Bedroom · pair</span>
+          <span class="room-art-title">Panda &amp; The Pearl</span>
+          <span class="room-meta">Example size · 16 × 16 in each</span>
+          <span class="room-actions">
+            <button class="room-swap" type="button">Try another piece ↻</button>
+            <a href="#buy" class="room-quote">Ask for a quote →</a>
+          </span>
+        </figcaption>
+      </figure>
+
+      <!-- 3 · STUDY / HOME OFFICE -->
+      <figure class="room-card" data-reveal="fade-up">
+        <div class="room room-office">
+          <div class="r-wall"></div>
+          <div class="r-floor"></div>
+          <div class="art" data-shape="portrait" style="--w:17%; left:30%; top:9%;">
+            <img src="Libs/projects/notable works/chamelion.jpg" alt="Chameleon by GuruDev" />
+          </div>
+          <div class="shelf">
+            <span class="book b1"></span><span class="book b2"></span><span class="book b3"></span><span class="book b4"></span>
+            <span class="board"></span>
+          </div>
+          <div class="desk">
+            <span class="monitor"></span><span class="monitor-stand"></span>
+            <span class="mug"></span>
+            <span class="desk-top"></span><span class="desk-leg d1"></span><span class="desk-leg d2"></span>
+          </div>
+          <div class="chair"><span class="chair-back"></span><span class="chair-seat"></span><span class="chair-post"></span><span class="chair-base"></span></div>
+        </div>
+        <figcaption>
+          <span class="room-type">Study / home office</span>
+          <span class="room-art-title">Chameleon</span>
+          <span class="room-meta">Example size · 16 × 20 in, framed</span>
+          <span class="room-actions">
+            <button class="room-swap" type="button">Try another piece ↻</button>
+            <a href="#buy" class="room-quote">Ask for a quote →</a>
+          </span>
+        </figcaption>
+      </figure>
+
+      <!-- 4 · CAFÉ / LOBBY (business spaces) -->
+      <figure class="room-card" data-reveal="fade-up" data-delay="100">
+        <div class="room room-cafe">
+          <div class="r-wall"></div>
+          <div class="r-floor"></div>
+          <span class="pendant pd1"></span><span class="pendant pd2"></span><span class="pendant pd3"></span>
+          <div class="art" data-shape="portrait" style="--w:14%; left:27%; top:20%;">
+            <img src="Libs/projects/notable works/hosre.jpg" alt="Horse by GuruDev" />
+          </div>
+          <div class="art" data-shape="portrait" style="--w:14%; left:50%; top:20%;">
+            <img src="Libs/projects/notable works/sparta.jpg" alt="Sparta by GuruDev" />
+          </div>
+          <div class="art" data-shape="portrait" style="--w:14%; left:73%; top:20%;">
+            <img src="Libs/projects/notable works/teddy_bear.jpg" alt="Teddy Bear by GuruDev" />
+          </div>
+          <div class="banquette"><span class="bq-back"></span><span class="bq-seat"></span></div>
+          <div class="table t1"><span class="t-top"></span><span class="t-leg"></span><span class="cup"></span></div>
+          <div class="table t2"><span class="t-top"></span><span class="t-leg"></span><span class="cup"></span></div>
+        </div>
+        <figcaption>
+          <span class="room-type">Café · lobby · office: series of three</span>
+          <span class="room-art-title">Horse, Sparta &amp; Teddy Bear</span>
+          <span class="room-meta">Example size · 18 × 24 in each</span>
+          <span class="room-actions">
+            <button class="room-swap" type="button">Try another piece ↻</button>
+            <a href="#buy" class="room-quote">Ask for a quote →</a>
+          </span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <p class="iys-note">Room previews are digital illustrations. Actual colours, scale and framing are confirmed with you before any order.</p>
+
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║                  BUY ART — quote only                      ║
+       ╠══════════════════════════════════════════════════════════════╣
+       ║ No fixed prices online. Every enquiry comes to you         ║
+       ║ via Instagram DM or email.                                 ║
+       ║ Drop sale images into Libs/projects/For Sale/Originals/    ║
+       ║ and Libs/projects/For Sale/Prints/ when ready.             ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="buy">
+
+    <div class="buy-header" data-reveal="fade-up">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Prints &amp;<br/>Originals</h2>
+      <p class="buy-sub">
+        Every piece is priced on request. Whatever you're after, whether it's an original, a print,
+        a commission or art for a whole space, message me and I'll send you a personal quote.
+      </p>
+    </div>
+
+    <div class="buy-grid">
+
+      <article class="buy-card" data-reveal="fade-up">
+        <span class="buy-num">A</span>
+        <h3>Originals</h3>
+        <p>The one-of-a-kind, hand-drawn piece, ink on paper and signed. Once it's gone, it's gone.</p>
+        <ul>
+          <li>Signed by the artist</li>
+          <li>Framing on request</li>
+          <li>Shipped carefully across India and abroad</li>
+        </ul>
+        <div class="buy-ctas">
+          <a class="btn-ig" href="https://ig.me/m/artbygurudev" target="_blank" rel="noopener">DM on Instagram</a>
+          <a class="btn-mail" href="mailto:artbygurudev@gmail.com?subject=Quote%20request%20%E2%80%94%20Original%20artwork&body=Hi%20GuruDev%2C%0A%0AI'm%20interested%20in%20an%20original.%0A%0APiece(s)%3A%20%0AWhere%20it%20will%20hang%3A%20%0ACity%20%2F%20country%3A%20%0A%0AThanks!">Email for a quote</a>
+        </div>
+      </article>
+
+      <article class="buy-card" data-reveal="fade-up" data-delay="100">
+        <span class="buy-num">B</span>
+        <h3>Prints</h3>
+        <p>High-quality reproductions of selected works, available in sizes to fit your wall.</p>
+        <ul>
+          <li>Size made to suit your space</li>
+          <li>Framed or unframed</li>
+          <li>Small editions available</li>
+        </ul>
+        <div class="buy-ctas">
+          <a class="btn-ig" href="https://ig.me/m/artbygurudev" target="_blank" rel="noopener">DM on Instagram</a>
+          <a class="btn-mail" href="mailto:artbygurudev@gmail.com?subject=Quote%20request%20%E2%80%94%20Prints&body=Hi%20GuruDev%2C%0A%0AI'm%20interested%20in%20prints.%0A%0APiece(s)%3A%20%0ASize%20%2F%20quantity%3A%20%0AFramed%3F%20%0ACity%20%2F%20country%3A%20%0A%0AThanks!">Email for a quote</a>
+        </div>
+      </article>
+
+      <article class="buy-card buy-card-biz" data-reveal="fade-up" data-delay="200">
+        <span class="buy-num">C</span>
+        <h3>Spaces &amp; Commissions</h3>
+        <p>For interior designers, architects, cafés, hotels, offices and anyone who wants a series or a custom piece.</p>
+        <ul>
+          <li>Curated sets for a whole space</li>
+          <li>Commissioned works</li>
+          <li>Volume and trade enquiries welcome</li>
+        </ul>
+        <div class="buy-ctas">
+          <a class="btn-ig" href="https://ig.me/m/artbygurudev" target="_blank" rel="noopener">DM on Instagram</a>
+          <a class="btn-mail" href="mailto:artbygurudev@gmail.com?subject=Business%20%2F%20commission%20enquiry&body=Hi%20GuruDev%2C%0A%0ACompany%20%2F%20studio%3A%20%0AType%20of%20space%3A%20%0ANumber%20of%20pieces%20%2F%20sizes%3A%20%0ATimeline%3A%20%0A%0AThanks!">Email for a quote</a>
+        </div>
+      </article>
+
+    </div>
+
+    <ol class="buy-steps" data-reveal="fade-up">
+      <li><span>01</span>Tell me which piece(s) you like, or the space you're filling.</li>
+      <li><span>02</span>Share the size, framing and where it's going.</li>
+      <li><span>03</span>I'll reply with a personal quote, mockups if needed, and timelines.</li>
+    </ol>
+
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║                  RIGHTS & USAGE (disclaimer)               ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="rights">
+    <div class="rights-inner" data-reveal="fade-up">
+      <span class="card-label">Rights &amp; Usage</span>
+      <p>
+        All artwork, drawings, paintings, photographs, projects, text and design on this website are
+        original works created by hand by <strong>GuruDev</strong> and are his intellectual property,
+        unless stated otherwise.
+      </p>
+      <p>
+        Some pieces are <em>inspired works</em>: they take inspiration from existing characters,
+        artists, places or popular culture, and are reinterpreted and drawn entirely by GuruDev. Any names,
+        characters or trademarks they reference remain the property of their respective owners.
+        No affiliation or endorsement is implied.
+      </p>
+      <p>
+        No image or content from this site may be copied, downloaded for reuse, reproduced, printed,
+        sold, altered, used commercially or used to train AI models without prior written permission.
+        For licensing or usage requests, write to
+        <a href="mailto:artbygurudev@gmail.com?subject=Licensing%20%2F%20usage%20request">artbygurudev@gmail.com</a>.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
        ║                  FOOTER / CONTACT                          ║
        ╠══════════════════════════════════════════════════════════════╣
        ║ EDIT the social links and email address below              ║
@@ -655,12 +908,13 @@
       </div>
       <div class="footer-mail-col">
         <!-- EDIT: Replace with your actual email address (both href and visible text) -->
-        <a href="mailto:artbygurudev@gmail.com" class="footer-mail">artbygurudev@gmail.com</a>
+        <a href="mailto:artbygurudev@gmail.com?subject=Quote%20request" class="footer-mail">artbygurudev@gmail.com</a>
+        <p class="footer-quote-note">Prints, originals &amp; commissions: DM or email for a quote.</p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span>© 2001 GuruDev. All art rights reserved.</span><!-- EDIT: Year + name -->
+      <span>© 2021–<span id="yearNow">2026</span> GuruDev. All artwork and content are the intellectual property of GuruDev. All rights reserved. · <a href="#rights" class="footer-rights-link">Rights &amp; Usage</a></span>
     </div>
 
     <div class="footer-noise"></div>
