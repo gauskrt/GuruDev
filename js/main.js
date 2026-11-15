@@ -435,49 +435,90 @@ document.addEventListener('DOMContentLoaded', () => {
         Lists are split by shape so the frames never change size.
      ───────────────────────────────────────────────────────────── */
   const NW = 'Libs/projects/notable works/';
+  const DP = 'Libs/projects/projects/daily project/';
+  const nw = (f, t) => [NW + f + '.jpg', t];
+  const dp = (f, t) => [DP + f + '.jpg', t];
+
+  /* Pieces each frame shape can cycle through. Add or rename freely. */
   const ROOM_ART = {
-    square:   [['panda','Panda'],['the_pearl','The Pearl'],['butterfly','Butterfly'],['frogs','Frogs'],
-               ['on_bench','On the Bench'],['squirral','Squirrel'],['car','Car']],
-    portrait: [['tiger','Tiger'],['chamelion','Chameleon'],['hosre','Horse'],['sparta','Sparta'],
-               ['teddy_bear','Teddy Bear'],['Mouse','Mouse'],['mouse_in_shoe','Mouse in a Shoe']]
+    square:   [nw('panda','Panda'), nw('the_pearl','The Pearl'), nw('butterfly','Butterfly'), nw('frogs','Frogs'),
+               nw('on_bench','On the Bench'), nw('squirral','Squirrel'), nw('car','Car')],
+    portrait: [nw('tiger','Tiger'), nw('chamelion','Chameleon'), nw('hosre','Horse'), nw('sparta','Sparta'),
+               nw('teddy_bear','Teddy Bear'), nw('Mouse','Mouse'), nw('mouse_in_shoe','Mouse in a Shoe')],
+    /* Small works — daily sketchbook drawings, used for cards, kids' room and the collage.
+       EDIT the titles to your own names for these pieces. */
+    small:    [dp('4','Penguin'), dp('11','Blue Bear'), dp('1','Bunny & Turtle'), dp('10','Mara the Meerkat'),
+               dp('5','Husky'), dp('15','Elephants'), dp('6','Saturn in Hand'), dp('duck','Duck at Dusk'),
+               dp('16','The Pilot'), dp('7','Bread of Adam'), dp('14','Jackal God'), dp('3','Antlered Beast'),
+               dp('19','Sun Stone'), dp('fire','Campfire'), dp('18','Robot Monk'), dp('8','Fruit-Hat Monkey'),
+               dp('17','Flute Player'), dp('13','The Potter'), dp('9','Planet Express'), dp('2','First Steps'),
+               dp('booster','Booster')]
   };
-  const fileOf = src => decodeURIComponent(src.split('/').pop().replace(/\.jpg$/i, ''));
+  const nameOf = src => decodeURIComponent(String(src)).split('/').slice(-2).join('/');
+  const joinTitles = t => t.length === 1 ? t[0] : t.length === 2 ? t.join(' & ')
+                         : t.slice(0, -1).join(', ') + ' & ' + t.slice(-1);
+
+  /* Get the next pieces from a list, skipping ones already in use */
+  function nextFrom(list, currentSrc, inUse) {
+    const cur = list.findIndex(a => nameOf(a[0]) === nameOf(currentSrc));
+    for (let k = 1; k <= list.length; k++) {
+      const cand = list[(cur + k + list.length) % list.length];
+      if (!inUse.includes(nameOf(cand[0]))) return cand;
+    }
+    return list[0];
+  }
+
+  function swapImg(el, src, title, attr, wrap) {
+    wrap.classList.add('swapping');
+    setTimeout(() => {
+      if (attr) el.setAttribute(attr, encodeURI(src)); else el.src = src;
+      if (el.tagName === 'IMG') el.alt = title + ' by GuruDev';
+      setTimeout(() => wrap.classList.remove('swapping'), 120);
+    }, 250);
+  }
 
   document.querySelectorAll('.room-card').forEach(card => {
     const btn = card.querySelector('.room-swap');
     const titleEl = card.querySelector('.room-art-title');
     if (!btn) return;
     btn.addEventListener('click', () => {
-      const frames = [...card.querySelectorAll('.art')];
-      const inRoom = frames.map(f => fileOf(f.querySelector('img').src));
+      const slots = [...card.querySelectorAll('[data-shape]')];
+      const imgOf = s => s.querySelector('img, image');
+      const srcOf = s => { const i = imgOf(s); return i.tagName === 'IMG' ? i.getAttribute('src') : i.getAttribute('href'); };
+      const inUse = slots.map(s => nameOf(srcOf(s)));
       const titles = [];
-      frames.forEach((frame, i) => {
-        const list = ROOM_ART[frame.dataset.shape] || ROOM_ART.square;
-        const cur  = list.findIndex(a => a[0] === inRoom[i]);
-        let next = cur;
-        // step forward until we land on a piece not already hanging in this room
-        for (let k = 1; k <= list.length; k++) {
-          const cand = (cur + k) % list.length;
-          if (!inRoom.includes(list[cand][0])) { next = cand; break; }
-        }
-        const [file, title] = list[next < 0 ? 0 : next];
-        inRoom[i] = file;
+      slots.forEach((slot, i) => {
+        const list = ROOM_ART[slot.dataset.shape] || ROOM_ART.square;
+        const [src, title] = nextFrom(list, srcOf(slot), inUse);
+        inUse[i] = nameOf(src);
         titles.push(title);
-        const img = frame.querySelector('img');
-        frame.classList.add('swapping');
-        setTimeout(() => {
-          img.src = NW + file + '.jpg';
-          img.alt = title + ' by GuruDev';
-          img.onload = () => frame.classList.remove('swapping');
-        }, 250);
+        const im = imgOf(slot);
+        swapImg(im, src, title, im.tagName === 'IMG' ? null : 'href', slot);
       });
-      if (titleEl) {
-        titleEl.textContent = titles.length === 1 ? titles[0]
-          : titles.length === 2 ? titles.join(' & ')
-          : titles.slice(0, -1).join(', ') + ' & ' + titles.slice(-1);
-      }
+      if (titleEl) titleEl.textContent = titles.length > 4 ? titles.length + ' small works' : joinTitles(titles);
     });
   });
+
+  /* Collage wall — built from the small-works list. Slots are x, y, w, h in cqw,
+     frame colour: b = black, o = oak, w = white. */
+  const COLLAGE_SLOTS = [
+    [12,10,8.5,11,'o'], [22,6,12,15,'b'], [35.5,4,16,12,'w'], [53,6,10,10,'b'], [64.5,3,13,17,'o'], [79,8,10,13,'b'],
+    [12,22.5,8.5,9,'b'], [22,22.5,9,9,'w'], [32.5,17.5,10,13,'b'], [44,17.5,19,13,'o'], [64.5,21.5,13,10,'w'], [79,22.5,10,9,'o'],
+    [33,32,12,10,'o'], [46.5,32,9,11,'b'], [57,32,13,9.5,'b']
+  ];
+  const collage = document.getElementById('collageWall');
+  if (collage) {
+    const start = 0;
+    COLLAGE_SLOTS.forEach(([x, y, w, h, c], i) => {
+      const [src, title] = ROOM_ART.small[(start + i) % ROOM_ART.small.length];
+      const f = document.createElement('div');
+      f.className = 'cframe cf-' + c;
+      f.dataset.shape = 'small';
+      f.style.cssText = `left:${x}cqw; top:${y}cqw; width:${w}cqw; height:${h}cqw;`;
+      f.innerHTML = `<img src="${src}" alt="${title} by GuruDev" draggable="false" />`;
+      collage.appendChild(f);
+    });
+  }
 
   /* ─────────────────────────────────────────────────────────────
      10. Light protection: no right-click "Save image" on artwork,
