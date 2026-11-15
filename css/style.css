@@ -1694,7 +1694,6 @@ footer {
 .footer-quote-note { font-family: var(--mono); font-size: 0.72rem; color: var(--fog); margin-top: 0.6rem; }
 .footer-mail-col { flex-direction: column; align-items: flex-end; }
 @media (max-width: 900px) { .footer-mail-col { align-items: center; } }
-@media (max-width: 560px) { .nav-links a[href="#in-your-space"] { display: none; } }
 
 /* ── Kids' room ── */
 .art[data-shape="small"] img { aspect-ratio: 1; }
@@ -1827,3 +1826,32 @@ footer {
 .nav-active { color: var(--signal) !important; }
 .buy-back { padding: 2.5rem var(--gutter) 0; font-family: var(--mono); font-size: 0.8rem; }
 .buy-back a { color: var(--signal); border-bottom: 1px solid rgba(224,90,43,0.4); }
+
+/* ═══════════════════════════════════════════════════════════════
+   PHONE: compact nav + year bar that fit on one line
+   ═══════════════════════════════════════════════════════════════ */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 640px) {
+  #navbar { padding: 0 14px; }
+  .nav-logo-text { font-size: 1.35rem; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.6rem; letter-spacing: 0.1em; }
+  .nl-long { display: none; }                 /* "In Your Space" -> "Space" */
+  .dark-mode-toggle { font-size: 0.95rem; padding: 0; }
+
+  .year-nav { height: 34px; }
+  .yn-inner { padding: 0; }
+  .yn-scroll { width: 100%; }
+  .yn-item {
+    flex: 1 1 0;
+    justify-content: center;
+    padding: 0 4px;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+  .yn-item:last-child { border-right: none; }
+}
+@media (max-width: 360px) {
+  .nav-links { gap: 0.7rem; }
+  .nav-links a { letter-spacing: 0.04em; }
+}
