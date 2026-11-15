@@ -118,6 +118,28 @@ The intellectual-property notice is the `#rights` section just above the footer.
 
 ---
 
+## Downloading drawings from Instagram stories (`stories.py`)
+
+`stories.py` downloads each story at full resolution, crops away the empty story background,
+saves it to `Libs/collections/<year>/<Name>.jpg`, and updates the Collections page and the year bar.
+The story links live in `Support/stories.json`.
+
+```bash
+pip install -r requirements.txt
+python -m playwright install chromium
+python stories.py login                       # one time: log in to Instagram, then close the window
+
+python stories.py add 2026 "Night Owl" https://www.instagram.com/stories/archive/1234567890/
+python stories.py                             # fetch every story in stories.json that has no image yet
+python stories.py --redo --year 2022          # re-download a year (e.g. to replace old low-res captures)
+python stories.py --only "Croc" --no-trim     # one story, keep the full 9:16 frame
+python stories.py pages                       # only rebuild the Collections page from the folders
+```
+
+Your login stays in `.ig-profile/`, which git ignores.
+
+---
+
 ## Dark Mode
 
 Click the **◐** button in the top-right of the nav. The preference is saved in `localStorage` and persists across visits.
