@@ -10,7 +10,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 18px; scroll-behavior: smooth; }
-    body { overflow-x: hidden; background: #f8f3ed; color: #2e2622; font-family: 'Cormorant Garamond', Georgia, serif; }
+    body { overflow-x: clip; background: #f8f3ed; color: #2e2622; font-family: 'Cormorant Garamond', Georgia, serif; }
     img  { display: block; max-width: 100%; }
     a    { text-decoration: none; color: inherit; }
 
@@ -103,7 +103,8 @@
     }
     .c-hero-year {
       font-family: var(--sans);
-      font-size: clamp(6rem, 20vw, 18rem);
+      font-size: clamp(3.5rem, 20vw, 18rem);
+      max-width: 100%;
       font-weight: 800;
       line-height: 0.85;
       letter-spacing: -0.04em;
@@ -182,6 +183,23 @@
     }
     @media (max-width: 700px) { .c-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 440px) { .c-grid { grid-template-columns: 1fr; } }
+
+    /* ── Phone layout ── */
+    .c-hero { overflow: hidden; }
+    @media (max-width: 640px) {
+      .c-nav { height: 52px; padding: 0 16px; }
+      .c-nav-logo span { font-size: 1.4rem !important; }
+      .c-nav > div { gap: 1rem !important; }
+      .c-nav-back { font-size: 0.55rem; letter-spacing: 0.12em; white-space: nowrap; }
+      .c-back-long { display: none; }
+      .c-year-strip { padding: 0; height: 38px; }
+      .c-yr { flex: 1 1 0; justify-content: center; padding: 0 4px; height: 38px; font-size: 0.6rem; letter-spacing: 0.08em; }
+      .c-yr:last-child { border-right: none; }
+      .c-hero { padding: 40px 16px 32px; gap: 1.2rem; }
+      .c-hero-meta { max-width: 100%; }
+      .c-grid-wrap { padding: 32px 16px; }
+      .c-note { line-height: 1.6; }
+    }
 
     .c-card {
       position: relative;
@@ -296,7 +314,7 @@
       <button class="c-dm-toggle" id="cDmToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
       <a href="../../index.html" class="c-nav-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        Back to Portfolio
+        <span class="c-back-long">Back to </span>Portfolio
       </a>
     </div>
   </header>

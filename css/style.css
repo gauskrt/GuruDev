@@ -1855,3 +1855,7 @@ footer {
   .nav-links { gap: 0.7rem; }
   .nav-links a { letter-spacing: 0.04em; }
 }
+
+/* Slide-in animations (data-reveal) start off-screen; never let them widen the page on phones */
+body { overflow-x: clip; }   /* clip (not hidden) keeps the sticky year bar working */
+body > section, body > footer, .subpage-main > section { overflow-x: clip; }
