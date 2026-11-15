@@ -18,3 +18,4 @@ GEMINI.md
 
 # Instagram login used by stories.py (never commit)
 .ig-profile/
+__pycache__/
