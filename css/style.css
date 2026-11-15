@@ -1820,3 +1820,10 @@ footer {
 @media (max-width: 900px) {
   .sw-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Sub-pages (space.html, buy.html) ── */
+.subpage-main { padding-top: 44px; }
+.subpage #in-your-space, .subpage #buy { border-top: none; }
+.nav-active { color: var(--signal) !important; }
+.buy-back { padding: 2.5rem var(--gutter) 0; font-family: var(--mono); font-size: 0.8rem; }
+.buy-back a { color: var(--signal); border-bottom: 1px solid rgba(224,90,43,0.4); }
