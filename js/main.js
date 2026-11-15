@@ -441,10 +441,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Pieces each frame shape can cycle through. Add or rename freely. */
   const ROOM_ART = {
-    square:   [nw('panda','Panda'), nw('the_pearl','The Pearl'), nw('butterfly','Butterfly'), nw('frogs','Frogs'),
+    square:   [nw('pebble_koi','Pebble Koi'), nw('three_monkeys','Three Monkeys'), nw('panda','Panda'), nw('the_pearl','The Pearl'), nw('butterfly','Butterfly'), nw('frogs','Frogs'),
                nw('on_bench','On the Bench'), nw('squirral','Squirrel'), nw('car','Car')],
-    portrait: [nw('tiger','Tiger'), nw('chamelion','Chameleon'), nw('hosre','Horse'), nw('sparta','Sparta'),
+    portrait: [nw('elephants','Mother & Calf'), nw('lion','Lion'), nw('betta','Betta'), nw('jellyfish','Jellyfish'),
+               nw('sky_lanterns','Sky Lanterns'), nw('dog','Curious Pup'), nw('bluebird','Bluebird'), nw('dolphins','Dolphins'),
+               nw('tiger','Tiger'), nw('chamelion','Chameleon'), nw('hosre','Horse'), nw('sparta','Sparta'),
                nw('teddy_bear','Teddy Bear'), nw('Mouse','Mouse'), nw('mouse_in_shoe','Mouse in a Shoe')],
+    landscape: [nw('whale','Whale'), nw('astronaut','Astronaut'), nw('jaguar','Jaguar'), nw('zebra','Zebra'),
+               nw('koi_swirl','Koi Swirl'), nw('road_home','Road Home'), nw('balloon','Hot Air Balloon')],
     /* Small works — daily sketchbook drawings, used for cards, kids' room and the collage.
        EDIT the titles to your own names for these pieces. */
     small:    [dp('4','Penguin'), dp('11','Blue Bear'), dp('1','Bunny & Turtle'), dp('10','Mara the Meerkat'),

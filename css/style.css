@@ -1832,12 +1832,11 @@ footer {
    ═══════════════════════════════════════════════════════════════ */
 .nav-links a { white-space: nowrap; }
 @media (max-width: 640px) {
-  #navbar { padding: 0 14px; }
-  .nav-logo-text { font-size: 1.35rem; }
-  .nav-links { gap: 1rem; }
-  .nav-links a { font-size: 0.6rem; letter-spacing: 0.1em; }
-  .nl-long { display: none; }                 /* "In Your Space" -> "Space" */
-  .dark-mode-toggle { font-size: 0.95rem; padding: 0; }
+  #navbar { padding: 0 12px; }
+  .nav-logo-text { font-size: 1.2rem; }
+  .nav-links { gap: 0.75rem; }
+  .nav-links a { font-size: 0.56rem; letter-spacing: 0.05em; }
+  .dark-mode-toggle { font-size: 0.9rem; padding: 0; }
 
   .year-nav { height: 34px; }
   .yn-inner { padding: 0; }
@@ -1851,11 +1850,56 @@ footer {
   }
   .yn-item:last-child { border-right: none; }
 }
-@media (max-width: 360px) {
-  .nav-links { gap: 0.7rem; }
-  .nav-links a { letter-spacing: 0.04em; }
+@media (max-width: 370px) {
+  .nav-logo-text { font-size: 1.05rem; }
+  .nav-links { gap: 0.55rem; }
+  .nav-links a { font-size: 0.52rem; letter-spacing: 0.02em; }
 }
 
 /* Slide-in animations (data-reveal) start off-screen; never let them widen the page on phones */
 body { overflow-x: clip; }   /* clip (not hidden) keeps the sticky year bar working */
 body > section, body > footer, .subpage-main > section { overflow-x: clip; }
+
+/* ── Landscape frames ── */
+.art[data-shape="landscape"] img { aspect-ratio: 3 / 2; }
+
+/* ── Dining room ── */
+.room-dining .r-wall {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,240,215,0.55), transparent 60%),
+    linear-gradient(#d8c3a5, #c9b190);
+}
+.room-dining .r-floor { background: linear-gradient(rgba(0,0,0,0.18), transparent 50%), repeating-linear-gradient(90deg, #6e5442 0 10cqw, #64493a 10cqw 10.15cqw); }
+.sideboard { left: 24%; width: 52%; bottom: 12%; height: 30%; z-index: 3; }
+.sb-body { left: 0; right: 0; top: 34%; height: 50%; background: #2e2622; border-radius: 0.4cqw; box-shadow: 0 1cqw 1.6cqw -0.6cqw rgba(0,0,0,0.35); }
+.sb-line { top: 40%; height: 38%; width: 0.2cqw; background: rgba(255,255,255,0.15); }
+.sb-line.l1 { left: 33%; } .sb-line.l2 { left: 66%; }
+.sb-leg { top: 84%; bottom: 0; width: 1.4%; background: #c9a46b; }
+.sb-leg.g1 { left: 6%; } .sb-leg.g2 { right: 6%; }
+.sb-vase { left: 12%; width: 7%; top: 10%; height: 24%; background: #e05a2b; border-radius: 40% 40% 25% 25%; }
+.sb-stem { left: 15%; top: -12%; width: 0.3cqw; height: 26%; background: #3f6b45; transform-origin: bottom; }
+.sb-stem.s1 { transform: rotate(-18deg); } .sb-stem.s2 { transform: rotate(16deg); }
+.sb-bowl { left: 72%; width: 14%; top: 24%; height: 10%; background: #e8dfd5; border-radius: 0 0 4cqw 4cqw; }
+.chair-d { bottom: 3%; width: 9%; height: 30%; z-index: 4; }
+.chair-d.cd1 { left: 8%; } .chair-d.cd2 { right: 8%; }
+.cd-back { left: 10%; right: 10%; top: 0; height: 55%; border: 0.5cqw solid #c9a46b; border-bottom: none; border-radius: 3cqw 3cqw 0 0; }
+.cd-seat { left: 0; right: 0; top: 55%; height: 9%; background: #c9a46b; border-radius: 0.3cqw; }
+.cd-leg { left: 8%; right: 8%; top: 64%; bottom: 0; border-left: 0.45cqw solid #c9a46b; border-right: 0.45cqw solid #c9a46b; }
+.room-dining .pendant { top: 0; }
+
+/* ── Reception / office lobby ── */
+.room-lobby .r-wall {
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255,245,225,0.5), transparent 30%),
+    radial-gradient(circle at 70% 0%, rgba(255,245,225,0.5), transparent 30%),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 0 0.15cqw, transparent 0.15cqw) 0 0 / 12cqw 100%,
+    linear-gradient(#e6e2dc, #d4cec5);
+}
+.room-lobby .r-floor { background: linear-gradient(rgba(0,0,0,0.12), transparent 50%), linear-gradient(90deg, #bdb6ac, #cfc8bd 50%, #bdb6ac); }
+.spot { top: 0; width: 3cqw; height: 1.4cqw; background: #2e2622; border-radius: 0 0 1.5cqw 1.5cqw; z-index: 4; }
+.spot.sp1 { left: 35%; } .spot.sp2 { left: 62%; }
+.desk-r { left: 26%; width: 48%; bottom: 8%; height: 30%; z-index: 3; }
+.dr-top { left: -2%; right: -2%; top: 0; height: 9%; background: #f3ede6; border-radius: 0.4cqw; box-shadow: 0 0.4cqw 0.8cqw rgba(0,0,0,0.15); }
+.dr-body { left: 0; right: 0; top: 9%; bottom: 0; background: #2e2622; }
+.dr-stripe { left: 0; right: 0; top: 50%; height: 4%; background: #e05a2b; }
+.plant.tall { left: auto; right: 7%; height: 55%; width: 12%; }
