@@ -248,7 +248,7 @@ def update_pages():
     # home page year bar
     home = HOME_PAGE.read_text(encoding="utf-8")
     links = "\n".join(
-        f'        <a href="Libs/collections/index.html?year={y}" target="_blank" class="yn-item">\n'
+        f'        <a href="Libs/collections/index.html?year={y}" class="yn-item">\n'
         f'          <span class="yn-year">{y}</span>\n        </a>' for y in years)
     home2, n = re.subn(r'(<div class="yn-scroll">\n).*?(\n      </div>)', lambda m: m.group(1) + links + m.group(2),
                        home, count=1, flags=re.S)
