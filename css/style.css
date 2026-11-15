@@ -1782,9 +1782,9 @@ footer {
 }
 .card-x img { width: 100%; aspect-ratio: 1 / 1.08; object-fit: cover; transition: opacity 0.35s ease; }
 .card-x::after {
-  content: 'GuruDev';
-  display: block; text-align: center;
-  font-family: var(--brush); font-size: 1.7cqw; color: #2e2622;
+  content: attr(data-title);
+  display: block; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-family: var(--brush); font-size: 1.5cqw; color: #2e2622;
   padding-top: 0.6cqw;
 }
 .card-x.swapping img { opacity: 0; }

@@ -494,6 +494,10 @@ document.addEventListener('DOMContentLoaded', () => {
         titles.push(title);
         const im = imgOf(slot);
         swapImg(im, src, title, im.tagName === 'IMG' ? null : 'href', slot);
+        // cards show the drawing's name instead of a signature
+        if (slot.classList.contains('card-x')) setTimeout(() => { slot.dataset.title = title; }, 250);
+        const nameEl = slot.parentNode && slot.parentNode.querySelector && slot.parentNode.querySelector('.card-name');
+        if (nameEl) setTimeout(() => { nameEl.textContent = title; }, 250);
       });
       if (titleEl) titleEl.textContent = titles.length > 4 ? titles.length + ' small works' : joinTitles(titles);
     });
