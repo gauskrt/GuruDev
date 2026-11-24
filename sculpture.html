@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sculpture — Art by GuruDev</title>
-  <link rel="stylesheet" href="css/style.css?v=202611241940" />
+  <link rel="stylesheet" href="css/style.css?v=202611242045" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Kaushan+Script&display=swap" rel="stylesheet" />
@@ -101,15 +101,18 @@
 
     <div class="sc-grid">
 
-      <!-- EDIT: title / material / size for this piece -->
-      <article class="sc-card" data-reveal="fade-up" data-frames="Libs/sculptures/knight-tower" data-count="15">
-        <div class="sc-stage">
-          <img src="Libs/sculptures/knight-tower/01.jpg" alt="Hand-carved tower sculpture topped with a horse head" loading="lazy" />
+      <!-- Chadurangada Kamba: 15 aligned frames, 01.jpg → 15.jpg, in turning order -->
+      <article class="sc-card" data-reveal="fade-up">
+        <div class="sc-stage sc-spin" data-frames="Libs/sculptures/chadurangada-kamba" data-count="15"
+             role="img" aria-label="Chadurangada Kamba, a carved apple-wood pillar, turning slowly">
+          <img src="Libs/sculptures/chadurangada-kamba/01.jpg" alt="Chadurangada Kamba, hand-carved apple-wood pillar topped with a chess knight" />
+          <span class="sc-hint">Drag to turn</span>
         </div>
         <div class="sc-meta">
           <span class="buy-num">01</span>
-          <h3>Knight Tower</h3>
-          <p class="sc-detail">Hand-carved</p><!-- EDIT: add material / size -->
+          <h3>Chadurangada Kamba</h3>
+          <p class="sc-detail">Apple wood · hand-chiselled</p>
+          <p class="sc-desc">Made with apple wood, chiselled with patience and planned move by move, like a game of chess.</p>
         </div>
       </article>
 
@@ -167,6 +170,6 @@
     <div class="footer-noise"></div>
   </footer>
 
-  <script src="js/main.js?v=202611241940"></script>
+  <script src="js/main.js?v=202611242045"></script>
 </body>
 </html>

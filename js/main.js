@@ -546,4 +546,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearNow = document.getElementById('yearNow');
   if (yearNow) yearNow.textContent = new Date().getFullYear();
 
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     SCULPTURE TURNTABLE
+     <div class="sc-spin" data-frames="folder" data-count="N">
+     Plays 01.jpg … N.jpg in a loop; drag / swipe to turn by hand.
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.sc-spin').forEach(stage => {
+    const img   = stage.querySelector('img');
+    const dir   = stage.dataset.frames;
+    const count = parseInt(stage.dataset.count, 10) || 1;
+    const src   = n => `${dir}/${String(n + 1).padStart(2, '0')}.jpg`;
+    const frames = Array.from({ length: count }, (_, n) => { const im = new Image(); im.src = src(n); return im; });
+    let i = 0, timer = null, visible = false, dragging = false, resumeAt = 0;
+    const show = n => { i = ((n % count) + count) % count; img.src = frames[i].src; };
+    const FPS = 7;
+    const tick = () => { if (!dragging && Date.now() > resumeAt) show(i + 1); };
+    const play = () => { if (!timer && !reduceMotion && visible) timer = setInterval(tick, 1000 / FPS); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? play() : stop(); }).observe(stage);
+
+    let startX = 0, startI = 0;
+    const STEP = 14; // px of drag per frame
+    stage.addEventListener('pointerdown', e => {
+      dragging = true; startX = e.clientX; startI = i;
+      stage.classList.add('touched'); stage.setPointerCapture?.(e.pointerId);
+    });
+    stage.addEventListener('pointermove', e => {
+      if (dragging) show(startI - Math.round((e.clientX - startX) / STEP));
+    });
+    const end = () => { dragging = false; resumeAt = Date.now() + 2500; };
+    stage.addEventListener('pointerup', end);
+    stage.addEventListener('pointercancel', end);
+  });
 });

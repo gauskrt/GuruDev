@@ -1950,3 +1950,14 @@ body > section, body > footer, .subpage-main > section { overflow-x: clip; }
 .sc-meta h3 { font-family: var(--sans); font-weight: 800; font-size: 1.5rem; color: var(--cream); margin: 0.3rem 0 0.4rem; }
 .sc-detail { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--fog); }
 .sc-meta { position: relative; }
+.sc-spin { position: relative; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.sc-spin:active { cursor: grabbing; }
+.sc-spin img { pointer-events: none; -webkit-user-drag: none; }
+.sc-hint {
+  position: absolute; right: 0.8rem; top: 0.8rem;
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #fff; background: rgba(23,17,13,0.45); padding: 0.35rem 0.7rem; border-radius: 99px;
+  transition: opacity 0.4s; pointer-events: none;
+}
+.sc-spin.touched .sc-hint { opacity: 0; }
+.sc-desc { font-size: 1.05rem; line-height: 1.5; margin-top: 0.8rem; color: var(--bone); }
