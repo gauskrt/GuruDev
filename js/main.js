@@ -33,20 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     EXHIBITIONS DROPDOWN
+     NAV DROPDOWNS (Years / Exhibitions)
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  const exDropdown = document.getElementById('exhibitionsDropdown');
-  const exToggle   = exDropdown?.querySelector('.nav-dropdown-toggle');
-
-  exToggle?.addEventListener('click', e => {
-    e.stopPropagation();
-    const isOpen = exDropdown.classList.toggle('open');
-    exToggle.setAttribute('aria-expanded', String(isOpen));
+  /* Works for every .nav-dropdown (Years, and Exhibitions if re-enabled).
+     Click toggles; clicking elsewhere or pressing Esc closes. */
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  const closeAll = except => dropdowns.forEach(dd => {
+    if (dd === except) return;
+    dd.classList.remove('open');
+    dd.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
   });
-  document.addEventListener('click', () => {
-    exDropdown?.classList.remove('open');
-    exToggle?.setAttribute('aria-expanded', 'false');
+  dropdowns.forEach(dd => {
+    const toggle = dd.querySelector('.nav-dropdown-toggle');
+    toggle?.addEventListener('click', e => {
+      e.stopPropagation();
+      closeAll(dd);
+      const isOpen = dd.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
   });
+  document.addEventListener('click', () => closeAll());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      IMAGE CAROUSELS

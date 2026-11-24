@@ -1903,3 +1903,50 @@ body > section, body > footer, .subpage-main > section { overflow-x: clip; }
 .dr-body { left: 0; right: 0; top: 9%; bottom: 0; background: #2e2622; }
 .dr-stripe { left: 0; right: 0; top: 50%; height: 4%; background: #e05a2b; }
 .plant.tall { left: auto; right: 7%; height: 55%; width: 12%; }
+
+/* ═══════════════════════════════════════════════════════════════
+   YEARS DROPDOWN (replaces the old year bar under the nav)
+   ═══════════════════════════════════════════════════════════════ */
+.nav-years .nav-dropdown-menu { min-width: 130px; }
+.nav-years .nav-dd-item { text-align: center; letter-spacing: 0.22em; }
+/* Desktop: also open on hover */
+@media (hover: hover) and (min-width: 641px) {
+  .nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown:hover .nav-dropdown-toggle { color: var(--signal); }
+  /* invisible bridge so the menu doesn't close crossing the gap */
+  .nav-dropdown::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 16px; }
+}
+@media (max-width: 640px) {
+  .nav-dropdown-toggle { font-size: 0.56rem; letter-spacing: 0.05em; gap: 0.15rem; white-space: nowrap; }
+  .nav-years .nav-dropdown-menu { min-width: 96px; top: calc(100% + 12px); }
+  .nav-years .nav-dd-item { padding: 0.75rem 1rem; font-size: 0.62rem; }
+}
+@media (max-width: 370px) {
+  .nav-dropdown-toggle { font-size: 0.52rem; letter-spacing: 0.02em; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SCULPTURE PAGE
+   ═══════════════════════════════════════════════════════════════ */
+#sculpture { padding: clamp(3rem, 7vw, 6rem) 0; }
+.sc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  padding: 0 var(--gutter);
+}
+.sc-card { border: 1px solid rgba(224,90,43,0.18); background: rgba(248,243,237,0.6); display: flex; flex-direction: column; }
+[data-theme="dark"] .sc-card { background: rgba(22,18,16,0.85); }
+.sc-stage { aspect-ratio: 3 / 4; overflow: hidden; background: #c79a6b; }
+.sc-stage img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sc-stage-ph {
+  display: flex; align-items: center; justify-content: center;
+  background: repeating-linear-gradient(-45deg, var(--pale), var(--pale) 10px, transparent 10px, transparent 20px);
+}
+.sc-stage-ph span { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fog); }
+.sc-meta { padding: 1.2rem 1.4rem 1.5rem; }
+.sc-meta h3 { font-family: var(--sans); font-weight: 800; font-size: 1.5rem; color: var(--cream); margin: 0.3rem 0 0.4rem; }
+.sc-detail { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--fog); }
+.sc-meta { position: relative; }
