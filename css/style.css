@@ -1982,3 +1982,54 @@ body > section, body > footer, .subpage-main > section { overflow-x: clip; }
   .sc-series-row { gap: 0.6rem; padding: 0 0.8rem; }
   .sc-slot figcaption { font-size: 0.62rem; letter-spacing: 0.06em; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   READABILITY PASS (Nov 2026): bigger header, larger small text,
+   centred sculpture cards
+   ═══════════════════════════════════════════════════════════════ */
+@media (min-width: 641px) {
+  #navbar { height: 72px; }
+  .subpage-main { padding-top: 72px; }
+  .nav-logo-text { font-size: 2.7rem; }
+  .nav-logo-img { height: 50px; }
+  .nav-links a, .nav-dropdown-toggle { font-size: 1rem; }
+  .nav-links { gap: 2.6rem; }
+  .nav-years .nav-dd-item { font-size: 0.85rem; }
+}
+.footer-bottom { font-size: 1.1rem; line-height: 1.7; opacity: 0.85; }
+.footer-rights-link { font-size: 1.15rem; font-weight: 700; }
+.footer-quote-note { font-size: 0.9rem; }
+
+/* Sculpture: centred cards and larger labels */
+.sc-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+.sc-grid > .sc-card { flex: 0 1 340px; }
+.sc-grid > .sc-series { flex: 1 1 100%; max-width: 900px; }
+#sculpture .buy-header { text-align: center; }
+#sculpture .buy-sub { margin-left: auto; margin-right: auto; font-size: 1.15rem; }
+.sc-detail { font-size: 0.85rem; }
+.sc-desc { font-size: 1.15rem; }
+.sc-slot figcaption { font-size: 0.85rem; }
+.sc-credit { font-size: 1rem; text-align: center; }
+@media (max-width: 760px) {
+  .sc-slot figcaption { font-size: 0.72rem; }
+}
+.social-link { font-size: 1.25rem; opacity: 1; }
+/* Larger small labels across the site */
+.eyebrow { font-size: 0.85rem; }
+.portrait-tag { font-size: 0.75rem; }
+.ticker-track { font-size: 0.8rem; }
+.c-label { font-size: 0.8rem; }
+.nw-num, .p52-wk { font-size: 0.75rem; }
+.ghost-btn { font-size: 0.82rem; }
+.nw-ph-label, .p52-ph-label, .sp-ph-label { font-size: 0.75rem; }
+.cta-link { font-size: 0.95rem; }
+@media (min-width: 641px) and (max-width: 1100px) {
+  .nav-logo-text { font-size: 2rem; }
+  .nav-links { gap: 1.2rem; }
+  .nav-links a, .nav-dropdown-toggle { font-size: 0.8rem; letter-spacing: 0.1em; }
+}
+@media (min-width: 641px) and (max-width: 820px) {
+  .nav-logo-text { font-size: 1.6rem; }
+  .nav-links { gap: 0.8rem; }
+  .nav-links a, .nav-dropdown-toggle { font-size: 0.7rem; letter-spacing: 0.05em; }
+}
