@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sculpture — Art by GuruDev</title>
-  <link rel="stylesheet" href="css/style.css?v=202611251130" />
+  <link rel="stylesheet" href="css/style.css?v=202611251310" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Kaushan+Script&display=swap" rel="stylesheet" />
@@ -103,10 +103,8 @@
 
       <!-- Chadurangada Kamba: 15 aligned frames, 01.jpg → 15.jpg, in turning order -->
       <article class="sc-card" data-reveal="fade-up">
-        <div class="sc-stage sc-spin" data-frames="Libs/sculptures/chadurangada-kamba" data-count="15"
-             role="img" aria-label="Chadurangada Kamba, a carved apple-wood pillar, turning slowly">
-          <img src="Libs/sculptures/chadurangada-kamba/01.jpg" alt="Chadurangada Kamba, hand-carved apple-wood pillar topped with a chess knight" />
-          <span class="sc-hint">Drag to turn</span>
+        <div class="sc-stage sc-stage-tall">
+          <img src="Libs/sculptures/chadurangada-kamba/spin.gif" alt="Chadurangada Kamba, a hand-carved apple-wood pillar topped with a chess knight, turning" />
         </div>
         <div class="sc-meta">
           <span class="buy-num">01</span>
@@ -116,39 +114,33 @@
         </div>
       </article>
 
-      <!-- CAN ART SERIES: one card, three pieces. To fill a slot, put frames in
-           Libs/sculptures/<folder>/01.jpg … and swap the "sc-stage-ph" div for a
-           "sc-stage sc-spin" div like the Two Cubes one (set data-count). -->
+      <!-- CAN ART SERIES: one card, a 2x2 grid of pieces. Each piece is a looping
+           Libs/sculptures/<folder>/spin.gif. To fill an empty slot, add its spin.gif
+           and swap the "sc-stage-ph" div for an <img> like the others. -->
       <article class="sc-card sc-series" data-reveal="fade-up">
         <div class="sc-meta">
           <span class="buy-num">02</span>
           <h3>CAN art</h3>
-          <p class="sc-detail">Aluminium can · folded by hand · a series of three</p>
-          <p class="sc-desc">One can, folded into cubes by hand. No tools, just fingers and patience. Two cubes, then three, then four.</p>
+          <p class="sc-detail">Aluminium can · folded by hand · a series of four</p>
+          <p class="sc-desc">One can, folded into cubes by hand. No tools, just fingers and patience. Two cubes, then three, then four, then the honeycomb.</p>
         </div>
 
         <div class="sc-series-row">
           <figure class="sc-slot">
-            <div class="sc-stage sc-spin" data-frames="Libs/sculptures/can-two-cubes" data-count="19"
-                 role="img" aria-label="Can folded into two cubes, turning slowly">
-              <img src="Libs/sculptures/can-two-cubes/01.jpg" alt="Aluminium can folded by hand into two stacked cubes" />
-              <span class="sc-hint">Drag to turn</span>
-            </div>
+            <div class="sc-stage"><img src="Libs/sculptures/can-two-cubes/spin.gif" alt="Aluminium can folded by hand into two stacked cubes, turning" loading="lazy" /></div>
             <figcaption><span>I</span> Two Cubes</figcaption>
           </figure>
-
           <figure class="sc-slot">
-            <div class="sc-stage sc-spin" data-frames="Libs/sculptures/can-three-cubes" data-count="17"
-                 role="img" aria-label="Can folded into three cubes, turning slowly">
-              <img src="Libs/sculptures/can-three-cubes/01.jpg" alt="Aluminium can folded by hand into three stacked cubes" />
-              <span class="sc-hint">Drag to turn</span>
-            </div>
+            <div class="sc-stage"><img src="Libs/sculptures/can-three-cubes/spin.gif" alt="Aluminium can folded by hand into three stacked cubes, turning" loading="lazy" /></div>
             <figcaption><span>II</span> Three Cubes</figcaption>
           </figure>
-
+          <figure class="sc-slot">
+            <div class="sc-stage"><img src="Libs/sculptures/can-four-cubes/spin.gif" alt="Aluminium can folded by hand into four stacked cubes, turning" loading="lazy" /></div>
+            <figcaption><span>III</span> Four Cubes</figcaption>
+          </figure>
           <figure class="sc-slot">
             <div class="sc-stage sc-stage-ph"><span>Coming soon</span></div>
-            <figcaption><span>III</span> Four Cubes</figcaption>
+            <figcaption><span>IV</span> Honeycomb</figcaption>
           </figure>
         </div>
 
@@ -203,6 +195,6 @@
     <div class="footer-noise"></div>
   </footer>
 
-  <script src="js/main.js?v=202611251130"></script>
+  <script src="js/main.js?v=202611251310"></script>
 </body>
 </html>

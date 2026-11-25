@@ -1962,14 +1962,15 @@ body > section, body > footer, .subpage-main > section { overflow-x: clip; }
 .sc-spin.touched .sc-hint { opacity: 0; }
 .sc-desc { font-size: 1.05rem; line-height: 1.5; margin-top: 0.8rem; color: var(--bone); }
 
-/* CAN art series card: spans the grid, three pieces side by side */
+/* CAN art series card: spans the grid, pieces in a 2x2 grid */
 .sc-series { grid-column: 1 / -1; }
 .sc-series-row {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-  padding: 0 1.4rem;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+  padding: 0 1.4rem; max-width: 560px; margin: 0 auto;
 }
 .sc-slot { margin: 0; }
-.sc-slot .sc-stage { background: #e9e7e2; }
+.sc-slot .sc-stage { aspect-ratio: 1 / 2; background: #e9e7e2; }
+.sc-stage-tall { aspect-ratio: 2 / 5; max-height: 80vh; margin: 0 auto; }
 .sc-slot figcaption {
   font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--fog); padding: 0.7rem 0 0;
@@ -1978,9 +1979,6 @@ body > section, body > footer, .subpage-main > section { overflow-x: clip; }
 .sc-credit { font-size: 0.85rem; line-height: 1.5; color: var(--fog); padding: 1.2rem 1.4rem 1.5rem; }
 .sc-credit a { color: var(--signal); }
 @media (max-width: 760px) {
-  .sc-series-row {
-    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%;
-    overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 0.5rem;
-  }
-  .sc-slot { scroll-snap-align: center; }
+  .sc-series-row { gap: 0.6rem; padding: 0 0.8rem; }
+  .sc-slot figcaption { font-size: 0.62rem; letter-spacing: 0.06em; }
 }
