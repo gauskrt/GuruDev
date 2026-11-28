@@ -2033,3 +2033,11 @@ body > section, body > footer, .subpage-main > section { overflow-x: clip; }
   .nav-links { gap: 0.8rem; }
   .nav-links a, .nav-dropdown-toggle { font-size: 0.7rem; letter-spacing: 0.05em; }
 }
+
+/* In Your Space: no mat or frame, paintings 25% larger */
+.room .art, .room-office .art, .room-kids .art, .room-hall .art {
+  width: calc(var(--w, 20%) * 1.25);
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
